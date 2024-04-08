@@ -14,7 +14,8 @@ export default {
     },
     darkShades: {
       d_10: '#191919',
-      d_11: '#1C1C1C'
+      d_11: '#1C1C1C',
+      d_15: '#262626'
     }
   },
   spacings: {
@@ -22,7 +23,7 @@ export default {
     medium: '2rem',
     large: '3rem'
   },
-  fontSize: {
+  fontWeight: {
     regular: 400,
     medium: 500,
     semi_bold: 600,
