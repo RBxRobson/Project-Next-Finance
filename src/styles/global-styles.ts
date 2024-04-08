@@ -10,10 +10,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ${({ theme }) => css`
-    html,
-    body {
+    * {
       padding: 0;
       margin: 0;
+      color: ${theme.colors.absoluteColors.white};
       font-family: lexend, sans-serif;
     }
 
@@ -33,6 +33,11 @@ const GlobalStyles = createGlobalStyle`
 
     * {
       box-sizing: border-box;
+    }
+
+    .container {
+      width: 1600px;
+      margin: 50px auto 0;
     }
   `}
 `
