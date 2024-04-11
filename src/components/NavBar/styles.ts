@@ -66,16 +66,6 @@ export const AccessButtons = styled.div`
   }
 `
 
-export const BtnLogin = styled.button`
-  ${({ theme }) => css`
-    border: none;
-    border-radius: 82px;
-    padding: 14px 30px;
-    background-color: ${theme.colors.greenShades.g_60};
-    color: ${theme.colors.darkShades.d_11};
-  `}
-`
-
 export const BtnSignUp = styled.button`
   background: transparent;
   border: none;

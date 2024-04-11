@@ -17,7 +17,9 @@ const NavBar = () => {
       </S.Nav>
       <S.AccessButtons>
         <S.BtnSignUp type="button">Cadastre-se</S.BtnSignUp>
-        <S.BtnLogin type="button">Login</S.BtnLogin>
+        <button className="green-button" type="button">
+          Login
+        </button>
       </S.AccessButtons>
     </S.Header>
   )
