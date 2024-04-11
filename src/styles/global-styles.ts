@@ -39,6 +39,16 @@ const GlobalStyles = createGlobalStyle`
       width: 1600px;
       margin: 50px auto 0;
     }
+
+    .green-button {
+      cursor: pointer;
+      border: none;
+      font-size: 18px;
+      border-radius: 82px;
+      padding: 14px 30px;
+      background-color: ${theme.colors.greenShades.g_60};
+      color: ${theme.colors.darkShades.d_11};
+    }
   `}
 `
 
