@@ -24,6 +24,7 @@ export default {
     large: '3rem'
   },
   fontWeight: {
+    light: 300,
     regular: 400,
     medium: 500,
     semi_bold: 600,
