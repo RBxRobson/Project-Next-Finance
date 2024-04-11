@@ -8,19 +8,21 @@ const Hero = () => {
       <S.HeroTitleWrapper>
         <S.Tag>
           <img src={iconVerify} alt="Ícone de verificado" />
-          <span>No LLC Required, No Credit Check.</span>
+          <span>Sem verificação de crédito</span>
         </S.Tag>
         <h2>
-          Welcome to YourBank Empowering Your <span>Financial Journey</span>
+          Bem vindo ao Next Finance, venha capacitar sua
+          <span> jornada financeira</span>
         </h2>
         <p>
-          At YourBank, our mission is to provide comprehensive banking solutions
-          that empower individuals and businesses to achieve their financial
-          goals. We are committed to delivering personalized and innovative
-          services that prioritize our customers needs.
+          A equipe do Next Finance, tem a missão de oferecer soluções bancárias
+          completas que capacitam indivíduos e empresas a alcançar seus
+          objetivos financeiros. Estamos comprometidos em fornecer serviços
+          personalizados e inovadores que atendem às necessidades de nossos
+          clientes.
         </p>
         <S.BtnOpenAccount className="green-button" type="button">
-          Open Account
+          Abra sua conta
         </S.BtnOpenAccount>
       </S.HeroTitleWrapper>
     </S.HeroContent>
