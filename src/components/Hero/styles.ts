@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components'
 
 export const HeroContent = styled.div`
   ${({ theme }) => css`
+    position: relative;
+    display: flex;
     margin-top: 54px;
     padding-top: 100px;
 
@@ -48,4 +50,10 @@ export const HeroTitleWrapper = styled.div`
 
 export const BtnOpenAccount = styled.button`
   padding: 18px 30px;
+`
+
+export const AbstractDesign = styled.img`
+  position: absolute;
+  right: 0;
+  top: 100px;
 `

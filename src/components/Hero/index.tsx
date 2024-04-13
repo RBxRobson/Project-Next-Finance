@@ -1,5 +1,6 @@
 import * as S from './styles'
 
+import abstractDesign from '../../assets/images/abstract_design_hero.svg'
 import iconVerify from '../../assets/images/verify_icon.png'
 
 const Hero = () => {
@@ -25,6 +26,7 @@ const Hero = () => {
           Abra sua conta
         </S.BtnOpenAccount>
       </S.HeroTitleWrapper>
+      <S.AbstractDesign src={abstractDesign} alt="" />
     </S.HeroContent>
   )
 }
