@@ -15,7 +15,8 @@ export default {
     darkShades: {
       d_10: '#191919',
       d_11: '#1C1C1C',
-      d_15: '#262626'
+      d_15: '#262626',
+      d_70: '#b3b3b3'
     }
   },
   spacings: {
