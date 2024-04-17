@@ -1,8 +1,8 @@
 import * as S from './styles'
 
 import iconAccount from '../../assets/images/icon_account.png'
-import iconMoney from '../../assets/images/icon_account.png'
-import iconSave from '../../assets/images/icon_account.png'
+import iconMoney from '../../assets/images/icon_money.png'
+import iconSave from '../../assets/images/icon_save.png'
 
 const OurProducts = () => {
   return (
@@ -41,7 +41,7 @@ const OurProducts = () => {
           </p>
         </S.Article>
         <S.Article className="padding-left">
-          <img src={iconSave} alt="" />
+          <img src={iconMoney} alt="" />
           <h4>Empréstimos e hipotecas</h4>
           <p>
             Realize seus sonhos com nossas opções flexíveis de empréstimos e
