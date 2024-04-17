@@ -6,7 +6,7 @@ import iconSave from '../../assets/images/icon_account.png'
 
 const OurProducts = () => {
   return (
-    <section className="container">
+    <S.SectionContent className="container">
       <S.HeaderSection>
         <h2>
           Nossos <span>Produtos</span>
@@ -51,7 +51,7 @@ const OurProducts = () => {
           </p>
         </S.Article>
       </S.ArticleWrapper>
-    </section>
+    </S.SectionContent>
   )
 }
 

@@ -1,9 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const SectionContent = styled.section`
-  ${({ theme }) => css`
-    padding-bottom: 150px;
-  `}
+  padding: 150px 0;
 `
 
 export const HeaderSection = styled.header`
