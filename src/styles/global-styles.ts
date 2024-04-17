@@ -51,6 +51,11 @@ const GlobalStyles = createGlobalStyle`
       background-color: ${theme.colors.greenShades.g_60};
       color: ${theme.colors.darkShades.d_11};
     }
+
+    .green-button--disabled {
+      background: transparent;
+      border: none;
+    }
   `}
 `
 
