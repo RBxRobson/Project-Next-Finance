@@ -6,21 +6,17 @@ export const SectionContent = styled.section`
 
 export const HeaderSection = styled.header`
   ${({ theme }) => css`
-    font-size: 18px;
-
     h2 {
-      font-size: 48px;
-      font-weight: ${theme.fontWeight.medium};
       margin-bottom: 14px;
 
       span {
         color: ${theme.colors.greenShades.g_60};
+        font-size: ${theme.fontSize.extra_large};
       }
     }
 
     p {
       max-width: 910px;
-      font-size: 18px;
       color: ${theme.colors.darkShades.d_70};
       font-weight: ${theme.fontWeight.light};
     }
@@ -42,13 +38,12 @@ export const Article = styled.article`
     }
 
     h4 {
-      font-size: 24px;
+      font-size: font-weight: ${theme.fontSize.large};
       margin: 30px 0 20px;
       font-weight: regular;
     }
 
     p {
-      font-size: 18px;
       font-weight: ${theme.fontWeight.light};
       color: ${theme.colors.darkShades.d_70};
     }

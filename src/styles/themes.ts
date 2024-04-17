@@ -30,5 +30,11 @@ export default {
     medium: 500,
     semi_bold: 600,
     bold: 700
+  },
+  fontSize: {
+    normal: '18px',
+    semi_large: '22px',
+    large: '24px',
+    extra_large: '48px'
   }
 }

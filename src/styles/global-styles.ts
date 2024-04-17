@@ -11,9 +11,11 @@ const GlobalStyles = createGlobalStyle`
 
   ${({ theme }) => css`
     * {
+      box-sizing: border-box;
       padding: 0;
       margin: 0;
       color: ${theme.colors.absoluteColors.white};
+      font-size: ${theme.fontSize.normal};
       font-family: lexend, sans-serif;
     }
 
@@ -31,8 +33,9 @@ const GlobalStyles = createGlobalStyle`
       text-decoration: none;
     }
 
-    * {
-      box-sizing: border-box;
+    h2 {
+      font-size: ${theme.fontSize.extra_large};
+      font-weight: ${theme.fontWeight.medium};
     }
 
     .container {
@@ -43,7 +46,6 @@ const GlobalStyles = createGlobalStyle`
     .green-button {
       cursor: pointer;
       border: none;
-      font-size: 18px;
       border-radius: 82px;
       padding: 14px 30px;
       background-color: ${theme.colors.greenShades.g_60};

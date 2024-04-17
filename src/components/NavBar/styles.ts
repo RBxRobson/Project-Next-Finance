@@ -13,8 +13,6 @@ export const Header = styled.header`
     border: 1px solid ${theme.colors.darkShades.d_15};
     border-radius: 100px;
     background-color: ${theme.colors.darkShades.d_11};
-
-    font-size: 18px;
   `}
 `
 
@@ -30,7 +28,7 @@ export const Logo = styled.div`
     }
 
     h1 {
-      font-size: 22px;
+      font-size: ${theme.fontSize.semi_large};
       font-weight: ${theme.fontWeight.medium};
     }
   `}
@@ -61,7 +59,6 @@ export const AccessButtons = styled.div`
   gap: 30px;
 
   button {
-    font-size: 18px;
     cursor: pointer;
   }
 `

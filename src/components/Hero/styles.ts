@@ -8,10 +8,9 @@ export const HeroContent = styled.div`
     padding-top: 100px;
 
     h2 {
-      font-size: 48px;
-
       span {
         color: ${theme.colors.greenShades.g_60};
+        font-size: ${theme.fontSize.extra_large};
       }
     }
   `}
@@ -25,7 +24,6 @@ export const Tag = styled.div`
     width: fit-content;
     padding: 10px 20px 10px 12px;
     border-radius: 60px;
-    font-size: 18px;
     font-weight: ${theme.fontWeight.light};
     background-color: ${theme.colors.darkShades.d_15};
   `}
@@ -40,7 +38,6 @@ export const HeroTitleWrapper = styled.div`
     }
 
     p {
-      font-size: 18px;
       font-weight: ${theme.fontWeight.light};
       line-height: 150%;
       padding-bottom: 50px;
