@@ -1,28 +1,11 @@
 import * as S from './styles'
 
 type Props = {
-  tabActive: 'CPF' | 'CNPJ'
+  children: JSX.Element
 }
 
-const TabSelector = ({ tabActive }: Props) => {
-  return (
-    <S.TabSelectorWrapper>
-      <button
-        className={
-          tabActive === 'CPF' ? 'green-button' : 'green-button--disabled'
-        }
-      >
-        Pessoas Físicas
-      </button>
-      <button
-        className={
-          tabActive === 'CNPJ' ? 'green-button' : 'green-button--disabled'
-        }
-      >
-        Empresas
-      </button>
-    </S.TabSelectorWrapper>
-  )
+const TabSelector = ({ children }: Props) => {
+  return <S.TabSelectorWrapper>{children}</S.TabSelectorWrapper>
 }
 
 export default TabSelector
