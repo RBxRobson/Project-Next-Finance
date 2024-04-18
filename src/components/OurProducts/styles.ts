@@ -20,6 +20,12 @@ export const HeaderSection = styled.header`
       color: ${theme.colors.darkShades.d_70};
       font-weight: ${theme.fontWeight.light};
     }
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
   `}
 `
 
