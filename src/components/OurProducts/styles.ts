@@ -41,6 +41,8 @@ export const Article = styled.article`
 
     img {
       margin: 0 auto;
+      width: 78px;
+      height: 78px;
     }
 
     h4 {
