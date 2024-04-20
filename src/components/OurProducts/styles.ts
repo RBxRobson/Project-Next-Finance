@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
 export const SectionContent = styled.section`
@@ -29,7 +30,7 @@ export const HeaderSection = styled.header`
   `}
 `
 
-export const ArticleWrapper = styled.div`
+export const ArticleWrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 `

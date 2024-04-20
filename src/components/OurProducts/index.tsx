@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 
 import * as S from './styles'
@@ -49,9 +50,14 @@ const OurProducts = () => {
           </TabSelector>
         </div>
       </S.HeaderSection>
-      <S.ArticleWrapper>
-        {tab === 'CPF' ? (
-          <>
+      <AnimatePresence mode="wait">
+        {tab === 'CPF' && (
+          <S.ArticleWrapper
+            key="CPF"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+          >
             <S.Article className="padding-right">
               <img src={iconAccount} alt="" />
               <h4>Facilidades Bancárias</h4>
@@ -83,9 +89,14 @@ const OurProducts = () => {
                 necessários.
               </p>
             </S.Article>
-          </>
-        ) : (
-          <>
+          </S.ArticleWrapper>
+        )}
+        {tab === 'CNPJ' && (
+          <S.ArticleWrapper
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+          >
             <S.Article className="padding-right">
               <img src={iconCompany} alt="" />
               <h4>Startups e Empreendedores</h4>
@@ -119,9 +130,9 @@ const OurProducts = () => {
                 experiência e recursos para conquistar novos mercados.
               </p>
             </S.Article>
-          </>
+          </S.ArticleWrapper>
         )}
-      </S.ArticleWrapper>
+      </AnimatePresence>
     </S.SectionContent>
   )
 }
