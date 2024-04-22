@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 export const HeroContent = styled.div`
   ${({ theme }) => css`
@@ -53,7 +53,19 @@ export const BtnOpenAccount = styled.button`
 `
 
 export const AbstractDesign = styled.img`
+  @keyframes slide {
+    50% {
+      transform: scale(0.95) translateX(-4px) translateY(4px);
+    }
+
+    100% {
+      transform: scale(1.05) translateX(4px) translateY(-4px);
+      filter: contrast(3);
+    }
+  }
+
   position: absolute;
   right: 0;
   top: 100px;
+  animation: slide 4s ease-out infinite alternate;
 `
