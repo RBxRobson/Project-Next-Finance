@@ -34,13 +34,24 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h2 {
+      margin-bottom: 14px;
       font-size: ${theme.fontSize.extra_large};
       font-weight: ${theme.fontWeight.medium};
+    }
+
+    p {
+      color: ${theme.colors.darkShades.d_70};
+      font-weight: ${theme.fontWeight.light};
     }
 
     .container {
       width: 1600px;
       margin: 50px auto 0;
+    }
+
+    .green-span {
+      color: ${theme.colors.greenShades.g_60};
+      font-size: ${theme.fontSize.extra_large};
     }
 
     .green-button {
