@@ -4,7 +4,7 @@ const UseCases = () => {
   return (
     <S.UseCaseSection className="container">
       <h2>
-        Porque escolher o <span>Next Finance</span>
+        Porque escolher o <span className="green-span">Next Finance</span>
       </h2>
       <p>
         No Next Finance, atendemos às diversas necessidades de pessoas físicas e

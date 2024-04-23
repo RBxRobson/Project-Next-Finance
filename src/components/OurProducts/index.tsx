@@ -20,7 +20,7 @@ const OurProducts = () => {
     <S.SectionContent className="container">
       <S.HeaderSection>
         <h2>
-          Nossos <span>Produtos</span>
+          Nossos <span className="green-span">Produtos</span>
         </h2>
         <div>
           <p>

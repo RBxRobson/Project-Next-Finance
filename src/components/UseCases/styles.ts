@@ -1,17 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const UseCaseSection = styled.section`
-  ${({ theme }) => css`
-    h2 {
-      margin-bottom: 14px;
-
-      span {
-        color: ${theme.colors.greenShades.g_60};
-        font-size: ${theme.fontSize.extra_large};
-      }
-    }
-  `}
-`
+export const UseCaseSection = styled.section``
 
 export const UseCaseArticle = styled.article`
   display: flex;

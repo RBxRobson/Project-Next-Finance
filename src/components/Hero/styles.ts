@@ -1,19 +1,10 @@
 import styled, { css, keyframes } from 'styled-components'
 
 export const HeroContent = styled.div`
-  ${({ theme }) => css`
-    position: relative;
-    display: flex;
-    margin-top: 54px;
-    padding-top: 100px;
-
-    h2 {
-      span {
-        color: ${theme.colors.greenShades.g_60};
-        font-size: ${theme.fontSize.extra_large};
-      }
-    }
-  `}
+  position: relative;
+  display: flex;
+  margin-top: 54px;
+  padding-top: 100px;
 `
 
 export const Tag = styled.div`

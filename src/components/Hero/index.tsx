@@ -13,7 +13,7 @@ const Hero = () => {
         </S.Tag>
         <h2>
           Bem vindo ao Next Finance, venha capacitar sua
-          <span> jornada financeira</span>
+          <span className="green-span"> jornada financeira</span>
         </h2>
         <p>
           A equipe do Next Finance, tem a missão de oferecer soluções bancárias
