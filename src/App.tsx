@@ -6,6 +6,7 @@ import theme from './styles/themes'
 import Hero from './components/Hero'
 import NavBar from './components/NavBar'
 import OurProducts from './components/OurProducts'
+import UseCases from './components/UseCases'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <NavBar />
       <Hero />
       <OurProducts />
+      <UseCases />
     </ThemeProvider>
   )
 }
