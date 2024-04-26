@@ -28,7 +28,7 @@ export const Logo = styled.div`
     }
 
     h1 {
-      font-size: ${theme.fontSize.semi_large};
+      font-size: ${theme.fontSize.M};
       font-weight: ${theme.fontWeight.medium};
     }
   `}

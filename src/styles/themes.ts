@@ -32,9 +32,10 @@ export default {
     bold: 700
   },
   fontSize: {
-    normal: '18px',
-    semi_large: '22px',
-    large: '24px',
-    extra_large: '48px'
+    S: '18px',
+    M: '22px',
+    L: '24px',
+    XL: '38px',
+    XXL: '48px'
   }
 }

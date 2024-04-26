@@ -58,7 +58,7 @@ export const Card = styled.div`
 
     p {
       text-align: center;
-      font-size: ${theme.fontSize.normal};
+      font-size: ${theme.fontSize.S};
       font-weight: ${theme.fontWeight.regular};
     }
   `}
@@ -67,7 +67,7 @@ export const Card = styled.div`
 export const DescriptionContainer = styled.div`
   ${({ theme }) => css`
     h4 {
-      font-size: ${theme.fontSize.large};
+      font-size: ${theme.fontSize.L};
       margin-bottom: 14px;
     }
   `}
@@ -80,7 +80,7 @@ export const StaticsWrapper = styled.div`
     padding: 62px 0;
 
     span {
-      font-size: ${theme.fontSize.extra_large};
+      font-size: ${theme.fontSize.XXL};
       color: ${theme.colors.greenShades.g_60};
     }
   `}

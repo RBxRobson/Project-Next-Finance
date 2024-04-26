@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
       padding: 0;
       margin: 0;
       color: ${theme.colors.absoluteColors.white};
-      font-size: ${theme.fontSize.normal};
+      font-size: ${theme.fontSize.S};
       font-family: lexend, sans-serif;
     }
 
@@ -35,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
 
     h2 {
       margin-bottom: 14px;
-      font-size: ${theme.fontSize.extra_large};
+      font-size: ${theme.fontSize.XXL};
       font-weight: ${theme.fontWeight.medium};
     }
 
@@ -51,7 +51,7 @@ const GlobalStyles = createGlobalStyle`
 
     .green-span {
       color: ${theme.colors.greenShades.g_60};
-      font-size: ${theme.fontSize.extra_large};
+      font-size: ${theme.fontSize.XXL};
     }
 
     .green-button {
@@ -59,6 +59,7 @@ const GlobalStyles = createGlobalStyle`
       border: none;
       border-radius: 82px;
       padding: 14px 30px;
+      font-weight: ${theme.fontWeight.regular};
       background-color: ${theme.colors.greenShades.g_60};
       color: ${theme.colors.darkShades.d_11};
     }

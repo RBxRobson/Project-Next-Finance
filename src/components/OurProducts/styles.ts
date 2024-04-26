@@ -34,7 +34,7 @@ export const Article = styled.article`
     }
 
     h4 {
-      font-size: font-weight: ${theme.fontSize.large};
+      font-size: font-weight: ${theme.fontSize.L};
       margin: 30px 0 20px;
       font-weight: regular;
     }
