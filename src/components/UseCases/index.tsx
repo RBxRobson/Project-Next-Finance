@@ -2,9 +2,13 @@ import * as S from './styles'
 
 import abstractLeft from '../../assets/images/design_radius_lf.svg'
 import abstractRight from '../../assets/images/design_radius_right.svg'
-import iconBank from '../../assets/images/icon_bank.png'
+import iconHome from '../../assets/images/icon_bank.png'
 import iconBook from '../../assets/images/icon_book.png'
+import iconCart from '../../assets/images/icon_cart.png'
+import iconCipher from '../../assets/images/icon_cipher.png'
+import iconCompany from '../../assets/images/icon_company.png'
 import iconMoneyBag from '../../assets/images/icon_money_bag.png'
+import iconMoney from '../../assets/images/icon_money.png'
 import iconSaveMoney from '../../assets/images/icon_save_money.png'
 
 const UseCases = () => {
@@ -21,32 +25,26 @@ const UseCases = () => {
         <S.CardsWrapper>
           <img src={abstractRight} className="position_left" />
           <S.Card>
-            <img
-              src={iconSaveMoney}
-              alt="Ícone com mãos em formato de coração e um cifrão dentro "
-            />
-            <p>Gerenciamento de finanças pessoais</p>
+            <img src={iconHome} alt="Ícone da estrutura de uma casa" />
+            <p>Conquiste sua casa própria</p>
           </S.Card>
           <S.Card>
             <img
               src={iconSaveMoney}
               alt="Ícone com mãos em formato de coração e um cifrão dentro "
             />
-            <p>Gerenciamento de finanças pessoais</p>
+            <p>Economize para o futuro</p>
           </S.Card>
           <S.Card>
             <img
-              src={iconSaveMoney}
-              alt="Ícone com mãos em formato de coração e um cifrão dentro "
+              src={iconMoneyBag}
+              alt="Ícone de uma mão com uma bolsa de dinheiro sobre"
             />
-            <p>Gerenciamento de finanças pessoais</p>
+            <p>Gerencie suas finanças pessoais</p>
           </S.Card>
           <S.Card>
-            <img
-              src={iconSaveMoney}
-              alt="Ícone com mãos em formato de coração e um cifrão dentro "
-            />
-            <p>Gerenciamento de finanças pessoais</p>
+            <img src={iconBook} alt="Ícone de um livro aberto" />
+            <p>Financie sua faculdade dos sonhos</p>
           </S.Card>
         </S.CardsWrapper>
         <S.DescriptionContainer>
@@ -76,26 +74,27 @@ const UseCases = () => {
       </S.UseCaseArticle>
       <S.UseCaseArticle>
         <S.DescriptionContainer>
-          <h4>Para Pessoas</h4>
+          <h4>Para empresas</h4>
           <p>
-            Nossos serviços de hipoteca abrem o caminho para a aquisição de uma
-            casa própria, e nossos empréstimos pessoais flexíveis fornecem
-            suporte vital durante vários marcos da vida. Também priorizamos o
-            planejamento da aposentadoria, garantindo um futuro financeiramente
-            seguro para nossos clientes
+            Para as empresas, potencializamos o crescimento com soluções de
+            capital de giro que otimizam o fluxo de caixa, e nossas opções de
+            financiamento personalizadas estimulam a expansão dos negócios.
+            Quaisquer que sejam as suas aspirações financeiras, o Next Finance
+            está empenhado em fornecer as ferramentas e o apoio certos para
+            alcançá-las
           </p>
           <S.StaticsWrapper>
             <div>
-              <span>78%</span>
-              <p>Planejamento de aposentadoria</p>
+              <span>65%</span>
+              <p>Gestão de Fluxo de Caixa</p>
             </div>
             <div>
-              <span>63%</span>
-              <p>Gerenciamento de dívidas</p>
+              <span>70%</span>
+              <p>Impulso na expansão dos negócios</p>
             </div>
             <div>
-              <span>91%</span>
-              <p>Redução de encargos financeiros</p>
+              <span>45%</span>
+              <p>Agilize o processamento da folha de pagamento</p>
             </div>
           </S.StaticsWrapper>
         </S.DescriptionContainer>
@@ -103,31 +102,25 @@ const UseCases = () => {
           <img src={abstractLeft} className="position_right" />
           <S.Card>
             <img
-              src={iconSaveMoney}
-              alt="Ícone com mãos em formato de coração e um cifrão dentro "
+              src={iconCart}
+              alt="Ícone de um quadro com gráfico empresarial"
             />
-            <p>Gerenciamento de finanças pessoais</p>
+            <p>Solicite uma análise de dados</p>
           </S.Card>
           <S.Card>
             <img
-              src={iconSaveMoney}
-              alt="Ícone com mãos em formato de coração e um cifrão dentro "
+              src={iconCompany}
+              alt="Ícone ilustrando estrutura de um prédio empresarial"
             />
-            <p>Gerenciamento de finanças pessoais</p>
+            <p>Apoio para expansão empresarial</p>
           </S.Card>
           <S.Card>
-            <img
-              src={iconSaveMoney}
-              alt="Ícone com mãos em formato de coração e um cifrão dentro "
-            />
-            <p>Gerenciamento de finanças pessoais</p>
+            <img src={iconCipher} alt="Ícone de uma cifra" />
+            <p>Encontre soluções de pagamentos</p>
           </S.Card>
           <S.Card>
-            <img
-              src={iconSaveMoney}
-              alt="Ícone com mãos em formato de coração e um cifrão dentro "
-            />
-            <p>Gerenciamento de finanças pessoais</p>
+            <img src={iconMoney} alt="Ícone de uma nota de dinheiro em papel" />
+            <p>Melhore seu fluxo de caixa</p>
           </S.Card>
         </S.CardsWrapper>
       </S.UseCaseArticle>
