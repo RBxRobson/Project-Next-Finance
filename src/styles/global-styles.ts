@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
       color: ${theme.colors.absoluteColors.white};
       font-size: ${theme.fontSize.S};
       font-family: lexend, sans-serif;
+      list-style: none;
     }
 
     body {
