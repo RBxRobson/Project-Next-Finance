@@ -4,6 +4,7 @@ import GlobalStyles from './styles/global-styles'
 import theme from './styles/themes'
 
 import CtaSection from './components/CtaSection'
+import Footer from './components/Footer'
 import Hero from './components/Hero'
 import NavBar from './components/NavBar'
 import OurProducts from './components/OurProducts'
@@ -18,6 +19,7 @@ function App() {
       <OurProducts />
       <UseCases />
       <CtaSection />
+      <Footer />
     </ThemeProvider>
   )
 }
