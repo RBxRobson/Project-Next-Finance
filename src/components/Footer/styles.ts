@@ -45,3 +45,28 @@ export const Links = styled.ul`
     }
   `}
 `
+
+export const InfosContact = styled.ul`
+  ${({ theme }) => css`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 0;
+    margin: 50px 0;
+    border-width: 2px 0;
+    border-style: solid;
+    border-color: ${theme.colors.darkShades.d_15};
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      p {
+        color: ${theme.colors.whiteShades.w_90};
+      }
+    }
+  `}
+`
