@@ -1,9 +1,12 @@
 import * as S from './styles'
 
 import logo from '../../assets/images/bank_logo.svg'
-import IconLocal from '../../assets/images/icon_local.png'
-import IconMail from '../../assets/images/icon_mail.png'
-import IconTelephone from '../../assets/images/icon_telephone.png'
+import iconFacebook from '../../assets/images/facebook_icon.png'
+import iconLocal from '../../assets/images/icon_local.png'
+import iconMail from '../../assets/images/icon_mail.png'
+import iconTelephone from '../../assets/images/icon_telephone.png'
+import iconLinkedin from '../../assets/images/linkedin_icon.png'
+import iconTwitter from '../../assets/images/twitter_icon.png'
 
 const Footer = () => {
   return (
@@ -29,18 +32,42 @@ const Footer = () => {
         </S.Links>
         <S.InfosContact>
           <li>
-            <img src={IconMail} alt="Ícone de email" />
+            <img src={iconMail} alt="Ícone de email" />
             <p>emailteste@gmail.com</p>
           </li>
           <li>
-            <img src={IconTelephone} alt="Ícone de telefone" />
+            <img src={iconTelephone} alt="Ícone de telefone" />
             <p>+55 54 9 9999-9999</p>
           </li>
           <li>
-            <img src={IconLocal} alt="Ícone de localização" />
+            <img src={iconLocal} alt="Ícone de localização" />
             <p>Barros Cassal - RS</p>
           </li>
         </S.InfosContact>
+        <S.FinalContentWrapper>
+          <S.SocialLinks>
+            <li>
+              <a href="#">
+                <img src={iconFacebook} alt="Ícone do facebook" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src={iconTwitter} alt="Ícone do X, antigo twitter" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src={iconLinkedin} alt="Ícone do Linkedin" />
+              </a>
+            </li>
+          </S.SocialLinks>
+          <p>Todos os direitos reservados - Next Finance</p>
+          <div>
+            <a href="#">Política de privacidade</a>
+            <a href="#">Termos de serviço</a>
+          </div>
+        </S.FinalContentWrapper>
       </div>
     </S.Footer>
   )

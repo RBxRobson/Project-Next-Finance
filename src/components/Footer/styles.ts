@@ -70,3 +70,58 @@ export const InfosContact = styled.ul`
     }
   `}
 `
+
+export const FinalContentWrapper = styled.div`
+  ${({ theme }) => css`
+    width: 100%;
+    padding: 16px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 100px;
+    border: 2px solid ${theme.colors.darkShades.d_15};
+    background-color: ${theme.colors.darkShades.d_10};
+
+    div {
+      a {
+        color: ${theme.colors.darkShades.d_70};
+        font-size: ${theme.fontSize.S};
+        font-weight: ${theme.fontWeight.light};
+      }
+
+      & > :first-child {
+        padding-right: 12px;
+        border-right: 1px solid ${theme.colors.darkShades.d_70};
+        margin-right: 12px;
+      }
+    }
+  `}
+`
+
+export const SocialLinks = styled.ul`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    li {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background-color: ${theme.colors.greenShades.g_60};
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  `}
+`
