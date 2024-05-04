@@ -26,7 +26,7 @@ const Hero = () => {
           Abra sua conta
         </S.BtnOpenAccount>
       </S.HeroTitleWrapper>
-      <S.AbstractDesign src={abstractDesign} alt="" />
+      <S.AbstractDesign src={abstractDesign} />
     </S.HeroContent>
   )
 }

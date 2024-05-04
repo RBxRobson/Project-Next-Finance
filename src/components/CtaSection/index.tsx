@@ -1,11 +1,11 @@
 import * as S from './styles'
 
-import radiaDesign from '../../assets/images/design_radius_right.svg'
+import radialDesign from '../../assets/images/design_radius_right.svg'
 
 const CtaSection = () => {
   return (
     <S.CtaContent className="container">
-      <img src={radiaDesign} />
+      <img src={radialDesign} />
       <div>
         <h3>
           Comece sua jornada financeira com

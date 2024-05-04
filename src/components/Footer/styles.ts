@@ -10,7 +10,7 @@ export const Footer = styled.footer`
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-size: ${theme.fontSize.S}
+      font-size: ${theme.fontSize.S};
       font-weight: ${theme.fontWeight.regular};
     }
   `}
