@@ -48,7 +48,7 @@ export const AbstractDesign = styled.img`
 
     100% {
       transform: scale(1.05) translateX(4px) translateY(-4px);
-      filter: contrast(3);
+      filter: contrast(1.5);
     }
   }
 
