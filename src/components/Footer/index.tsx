@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import * as S from './styles'
 
 import logo from '../../assets/images/bank_logo.svg'
@@ -7,6 +9,13 @@ import iconMail from '../../assets/images/icon_mail.png'
 import iconTelephone from '../../assets/images/icon_telephone.png'
 import iconLinkedin from '../../assets/images/linkedin_icon.png'
 import iconTwitter from '../../assets/images/twitter_icon.png'
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
 
 const Footer = () => {
   return (
@@ -18,7 +27,9 @@ const Footer = () => {
         </S.Logo>
         <S.Links>
           <li>
-            <a href="#">Home</a>
+            <Link to="/" onClick={scrollToTop}>
+              Home
+            </Link>
           </li>
           <li>
             <a href="#">Trabalhe conosco</a>
