@@ -6,8 +6,7 @@ type PurchaseResponse = {
 
 const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl:
-      'https://next-finance-fake-je9io8oiv-rbxrobsons-projects.vercel.app/'
+    baseUrl: 'https://next-finance-fake-api-rbxrobsons-projects.vercel.app/'
   }),
   endpoints: (builder) => ({
     getHome: builder.query<Home, void>({
