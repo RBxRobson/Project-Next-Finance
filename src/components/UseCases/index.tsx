@@ -30,12 +30,11 @@ const UseCases = ({ home }: Props) => {
         <S.CardsWrapper>
           <img src={abstractRight} className="position_left" />
           {forPeopleCards.map((card) => (
-            <>
-              <S.Card key={card.id}>
-                <img src={card.icon} alt="Ícone da estrutura de uma casa" />
-                <p>{card.name}</p>
-              </S.Card>
-            </>
+            <S.Card key={card.id}>
+              <span>{card.id}</span>
+              <img src={card.icon} alt="Ícone da estrutura de uma casa" />
+              <p>{card.name}</p>
+            </S.Card>
           ))}
         </S.CardsWrapper>
         <S.DescriptionContainer>
@@ -43,12 +42,11 @@ const UseCases = ({ home }: Props) => {
           <p>{forPeopleDescription}</p>
           <S.StaticsWrapper>
             {forPeopleStatistics.map((statistic) => (
-              <>
-                <div key={statistic.value}>
-                  <span>{statistic.value}</span>
-                  <p>{statistic.name}</p>
-                </div>
-              </>
+              <li key={statistic.id}>
+                <span>{statistic.value}</span>
+                <p>{statistic.name}</p>
+                <span>{statistic.id}</span>
+              </li>
             ))}
           </S.StaticsWrapper>
         </S.DescriptionContainer>
@@ -59,24 +57,22 @@ const UseCases = ({ home }: Props) => {
           <p>{forBusinessesDescription}</p>
           <S.StaticsWrapper>
             {forBusinessesStatistics.map((statistic) => (
-              <>
-                <div key={statistic.value}>
-                  <span>{statistic.value}</span>
-                  <p>{statistic.name}</p>
-                </div>
-              </>
+              <li key={statistic.id}>
+                <span>{statistic.value}</span>
+                <p>{statistic.name}</p>
+                <span>{statistic.id}</span>
+              </li>
             ))}
           </S.StaticsWrapper>
         </S.DescriptionContainer>
         <S.CardsWrapper>
           <img src={abstractLeft} className="position_right" />
           {forBusinessesCards.map((card) => (
-            <>
-              <S.Card key={card.id}>
-                <img src={card.icon} />
-                <p>{card.name}</p>
-              </S.Card>
-            </>
+            <S.Card key={card.id}>
+              <span>{card.id}</span>
+              <img src={card.icon} />
+              <p>{card.name}</p>
+            </S.Card>
           ))}
         </S.CardsWrapper>
       </S.UseCaseArticle>

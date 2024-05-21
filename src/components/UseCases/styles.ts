@@ -39,7 +39,7 @@ export const CardsWrapper = styled.div`
   `}
 `
 
-export const Card = styled.div`
+export const Card = styled.li`
   ${({ theme }) => css`
     z-index: 1;
     width: 314px;
@@ -73,7 +73,7 @@ export const DescriptionContainer = styled.div`
   `}
 `
 
-export const StaticsWrapper = styled.div`
+export const StaticsWrapper = styled.ul`
   ${({ theme }) => css`
     display: flex;
     gap: 50px;
