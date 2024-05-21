@@ -1,3 +1,4 @@
+import { Link as RouterLink } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 
 export const Header = styled.header`
@@ -40,15 +41,18 @@ export const Nav = styled.nav`
   gap: 26px;
 `
 
-export const Links = styled.a`
+export const Link = styled(RouterLink)`
   ${({ theme }) => css`
     cursor: pointer;
     font-weight: ${theme.fontWeight.regular};
+    border-radius: 82px;
+    transition:
+      background-color 300ms,
+      padding 300ms;
 
     &.active {
       background-color: ${theme.colors.darkShades.d_15};
       padding: 12px 24px;
-      border-radius: 82px;
     }
   `}
 `
