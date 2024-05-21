@@ -6,6 +6,7 @@ declare type Product = {
 }
 
 declare type Statistic = {
+  id: number
   name: string
   value: string
 }
