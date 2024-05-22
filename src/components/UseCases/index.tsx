@@ -31,7 +31,6 @@ const UseCases = ({ home }: Props) => {
           <img src={abstractRight} className="position_left" />
           {forPeopleCards.map((card) => (
             <S.Card key={card.id}>
-              <span>{card.id}</span>
               <img src={card.icon} alt="Ícone da estrutura de uma casa" />
               <p>{card.name}</p>
             </S.Card>
@@ -45,7 +44,6 @@ const UseCases = ({ home }: Props) => {
               <li key={statistic.id}>
                 <span>{statistic.value}</span>
                 <p>{statistic.name}</p>
-                <span>{statistic.id}</span>
               </li>
             ))}
           </S.StaticsWrapper>
@@ -60,7 +58,6 @@ const UseCases = ({ home }: Props) => {
               <li key={statistic.id}>
                 <span>{statistic.value}</span>
                 <p>{statistic.name}</p>
-                <span>{statistic.id}</span>
               </li>
             ))}
           </S.StaticsWrapper>
@@ -69,7 +66,6 @@ const UseCases = ({ home }: Props) => {
           <img src={abstractLeft} className="position_right" />
           {forBusinessesCards.map((card) => (
             <S.Card key={card.id}>
-              <span>{card.id}</span>
               <img src={card.icon} />
               <p>{card.name}</p>
             </S.Card>
