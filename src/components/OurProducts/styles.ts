@@ -18,8 +18,25 @@ export const HeaderSection = styled.header`
 `
 
 export const ArticleWrapper = styled(motion.div)`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    & > :first-child {
+      padding-right: 50px;
+    }
+
+    & > :last-child {
+      padding-left: 50px;
+    }
+
+    & > :nth-child(2) {
+      border: 2px solid ${theme.colors.darkShades.d_15};
+      padding: 0 50px;
+      border-top: none;
+      border-bottom: none;
+    }
+  `}
 `
 
 export const Article = styled.article`
@@ -42,21 +59,6 @@ export const Article = styled.article`
     p {
       font-weight: ${theme.fontWeight.light};
       color: ${theme.colors.darkShades.d_70};
-    }
-
-    &.border {
-      border: 2px solid ${theme.colors.darkShades.d_15};
-      padding: 0 50px;
-      border-top: none;
-      border-bottom: none;
-    }
-
-    &.padding-left {
-      padding-left: 50px;
-    }
-
-    &.padding-right {
-      padding-right: 50px;
     }
   `}
 `

@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <NavBar />
       <Hero />
-      <OurProducts />
+      <OurProducts home={home} />
       <UseCases home={home} />
       <CtaSection />
       <Footer />
