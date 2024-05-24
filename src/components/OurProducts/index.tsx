@@ -5,7 +5,6 @@ import * as S from './styles'
 
 import TabSelector from '../../components/TabSelector'
 
-type TabType = 'CPF' | 'CNPJ'
 type Props = {
   home: Home
 }
@@ -15,7 +14,7 @@ const OurProducts = ({ home }: Props) => {
   const productsForPeople = ourProductsInfos.for_people
   const productsForBusinesses = ourProductsInfos.for_businesses
 
-  const [tab, setTab] = useState<TabType>('CPF')
+  const [position, setPosition] = useState('left')
 
   return (
     <S.SectionContent className="container">
@@ -25,32 +24,23 @@ const OurProducts = ({ home }: Props) => {
         </h2>
         <div>
           <p>{ourProductsInfos.description}</p>
-          <TabSelector>
-            <>
-              <button
-                className={
-                  tab === 'CPF' ? 'green-button' : 'green-button--disabled'
-                }
-                onClick={() => setTab('CPF')}
-              >
-                Pessoas Físicas
-              </button>
-              <button
-                className={
-                  tab === 'CNPJ' ? 'green-button' : 'green-button--disabled'
-                }
-                onClick={() => setTab('CNPJ')}
-              >
-                Empresas
-              </button>
-            </>
-          </TabSelector>
+          <TabSelector
+            position={position}
+            firstBtn={{
+              name: 'Pessoa Física',
+              onClick: () => setPosition('left')
+            }}
+            secondBtn={{
+              name: 'Empresa',
+              onClick: () => setPosition('right')
+            }}
+          />
         </div>
       </S.HeaderSection>
       <AnimatePresence mode="wait">
-        {tab === 'CPF' && (
+        {position === 'left' && (
           <S.ArticleWrapper
-            key="CPF"
+            key="left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
@@ -64,7 +54,7 @@ const OurProducts = ({ home }: Props) => {
             ))}
           </S.ArticleWrapper>
         )}
-        {tab === 'CNPJ' && (
+        {position === 'right' && (
           <S.ArticleWrapper
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
