@@ -1,4 +1,5 @@
 import CtaSection from '../../components/CtaSection'
+import FAQ from '../../components/FAQ'
 import Footer from '../../components/Footer'
 import Hero from '../../components/Hero'
 import NavBar from '../../components/NavBar'
@@ -19,6 +20,7 @@ const Home = () => {
       <Hero home={home} />
       <OurProducts home={home} />
       <UseCases home={home} />
+      <FAQ />
       <CtaSection />
       <Footer />
     </>
