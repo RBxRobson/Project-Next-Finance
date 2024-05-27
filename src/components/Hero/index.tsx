@@ -3,7 +3,11 @@ import * as S from './styles'
 import abstractDesign from '../../assets/images/abstract_design_hero.svg'
 import iconVerify from '../../assets/images/verify_icon.png'
 
-const Hero = () => {
+type Props = {
+  home: Home
+}
+
+const Hero = ({ home }: Props) => {
   return (
     <S.HeroContent className="container">
       <S.HeroTitleWrapper>
@@ -15,13 +19,7 @@ const Hero = () => {
           Bem vindo ao Next Finance, venha capacitar sua
           <span className="green-span"> jornada financeira</span>
         </h2>
-        <p>
-          A equipe do Next Finance, tem a missão de oferecer soluções bancárias
-          completas que capacitam indivíduos e empresas a alcançar seus
-          objetivos financeiros. Estamos comprometidos em fornecer serviços
-          personalizados e inovadores que atendem às necessidades de nossos
-          clientes.
-        </p>
+        <p>{home.hero.description}</p>
         <S.BtnOpenAccount className="green-button" type="button">
           Abra sua conta
         </S.BtnOpenAccount>

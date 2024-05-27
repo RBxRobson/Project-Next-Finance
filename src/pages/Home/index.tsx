@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <NavBar />
-      <Hero />
+      <Hero home={home} />
       <OurProducts home={home} />
       <UseCases home={home} />
       <CtaSection />
