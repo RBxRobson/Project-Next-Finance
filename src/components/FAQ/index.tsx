@@ -1,6 +1,16 @@
+import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
+
 import * as S from './styles'
 
-const FAQ = () => {
+type Props = {
+  home: Home
+}
+
+const FAQ = ({ home }: Props) => {
+  const { cards } = home.FAQ
+  const [expanded, setExpanded] = useState<false | number>(false)
+
   return (
     <section className="container">
       <S.HeaderFAQ>
@@ -13,47 +23,61 @@ const FAQ = () => {
         </p>
       </S.HeaderFAQ>
       <S.CardsGrid>
-        <S.CardFAQ>
-          <h4>Como abro uma conta no Next Finance?</h4>
-          <p>
-            Abrir uma conta no Next Finance é fácil. Basta visitar nosso site e
-            clicar no botão &ldquo;Cadastrar-se&ldquo;. Siga as instruções,
-            forneça as informações necessárias e conclua o processo de
-            inscrição. Se você tiver alguma dúvida ou precisar de assistência,
-            nossa equipe de suporte ao cliente está disponível para ajudar.
-          </p>
-        </S.CardFAQ>
-        <S.CardFAQ>
-          <h4>Como abro uma conta no Next Finance?</h4>
-          <p>
-            Abrir uma conta no Next Finance é fácil. Basta visitar nosso site e
-            clicar no botão &ldquo;Cadastrar-se&ldquo;. Siga as instruções,
-            forneça as informações necessárias e conclua o processo de
-            inscrição. Se você tiver alguma dúvida ou precisar de assistência,
-            nossa equipe de suporte ao cliente está disponível para ajudar.
-          </p>
-        </S.CardFAQ>
-        <S.CardFAQ>
-          <h4>Como abro uma conta no Next Finance?</h4>
-          <p>
-            Abrir uma conta no Next Finance é fácil. Basta visitar nosso site e
-            clicar no botão &ldquo;Cadastrar-se&ldquo;. Siga as instruções,
-            forneça as informações necessárias e conclua o processo de
-            inscrição. Se você tiver alguma dúvida ou precisar de assistência,
-            nossa equipe de suporte ao cliente está disponível para ajudar.
-          </p>
-        </S.CardFAQ>
-        <S.CardFAQ>
-          <h4>Como abro uma conta no Next Finance?</h4>
-          <p>
-            Abrir uma conta no Next Finance é fácil. Basta visitar nosso site e
-            clicar no botão &ldquo;Cadastrar-se&ldquo;. Siga as instruções,
-            forneça as informações necessárias e conclua o processo de
-            inscrição. Se você tiver alguma dúvida ou precisar de assistência,
-            nossa equipe de suporte ao cliente está disponível para ajudar.
-          </p>
-        </S.CardFAQ>
-        <S.ButtonFAQ>Load All FAQ</S.ButtonFAQ>
+        {cards.map((card, i) => {
+          const isOpen = i === expanded
+          return (
+            <S.CardFAQ
+              key={card.id}
+              onClick={() => setExpanded(isOpen ? false : i)}
+              variants={{
+                open: {
+                  filter: 'brightness(1)'
+                },
+                closed: {
+                  filter: 'brightness(2)'
+                }
+              }}
+              animate={isOpen ? 'closed' : 'open'}
+            >
+              <S.CardHeader>
+                <h4>{card.title}</h4>
+                <S.IconX
+                  viewBox="0 0 24 24"
+                  transition={{
+                    type: 'spring',
+                    damping: 20,
+                    stiffness: 150
+                  }}
+                  variants={{
+                    open: { transform: 'rotate(134deg)' },
+                    closed: { transform: 'rotate(360deg)' }
+                  }}
+                  animate={isOpen ? 'closed' : 'open'}
+                >
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </S.IconX>
+              </S.CardHeader>
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.p
+                    transition={{
+                      type: 'tween'
+                    }}
+                    variants={{
+                      open: { opacity: 1, height: 'auto', marginTop: 20 },
+                      closed: { opacity: 0, height: 0, marginTop: 0 }
+                    }}
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
+                  >
+                    {card.description}
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </S.CardFAQ>
+          )
+        })}
       </S.CardsGrid>
     </section>
   )
