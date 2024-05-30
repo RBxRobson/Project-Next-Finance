@@ -20,7 +20,7 @@ const Home = () => {
       <Hero home={home} />
       <OurProducts home={home} />
       <UseCases home={home} />
-      <FAQ />
+      <FAQ home={home} />
       <CtaSection />
       <Footer />
     </>

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
 export const HeaderFAQ = styled.header`
@@ -7,40 +8,46 @@ export const HeaderFAQ = styled.header`
 `
 
 export const CardsGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 30px;
-  padding: 80px 0 60px;
-  box-shadow: inset 0px -200px 100px -60px rgba(25, 25, 25, 1);
-  position: relative;
+  padding: 60px 0;
 `
 
-export const CardFAQ = styled.div`
+export const CardFAQ = styled(motion.div)`
   ${({ theme }) => css`
+    width: 100%;
     border-radius: 14px;
     border: 1px solid ${theme.colors.darkShades.d_15};
-    padding: 50px;
-    z-index: -1;
+    padding: 30px;
 
-    h4 {
-      border-bottom: 1px solid ${theme.colors.darkShades.d_15};
-      padding-bottom: 30px;
-      margin-bottom: 30px;
+    p {
+      overflow-y: hidden;
     }
   `}
 `
 
-export const ButtonFAQ = styled.button`
+export const CardHeader = styled.header`
   ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
-    border: 1px solid ${theme.colors.darkShades.d_15};
-    background-color: ${theme.colors.darkShades.d_11};
-    padding: 18px;
-    border-radius: 100px;
+
+    h4 {
+      font-size: ${theme.fontSize.M};
+      font-weight: ${theme.fontWeight.regular};
+    }
   `}
+`
+
+export const IconX = styled(motion.svg)`
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: ${({ theme }) => theme.colors.darkShades.d_70};
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 `
