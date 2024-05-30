@@ -17,6 +17,12 @@ declare type Card = {
   icon: string
 }
 
+declare type CardFAQ = {
+  id: number
+  title: string
+  description: string
+}
+
 declare type Home = {
   hero: {
     description: string
@@ -38,5 +44,8 @@ declare type Home = {
       statistics: Statistic[]
       cards: Card[]
     }
+  }
+  FAQ: {
+    cards: CardFAQ[]
   }
 }
