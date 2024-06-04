@@ -34,40 +34,15 @@ const GlobalStyles = createGlobalStyle`
       text-decoration: none;
     }
 
-    h2 {
-      margin-bottom: 14px;
-      font-size: ${theme.fontSize.XXL};
-      font-weight: ${theme.fontWeight.medium};
-    }
-
     p {
       color: ${theme.colors.darkShades.d_70};
       font-weight: ${theme.fontWeight.light};
     }
 
     .container {
-      width: 1600px;
-      margin: 50px auto 0;
-    }
-
-    .green-span {
-      color: ${theme.colors.greenShades.g_60};
-      font-size: ${theme.fontSize.XXL};
-    }
-
-    .green-button {
-      cursor: pointer;
-      border: none;
-      border-radius: 82px;
-      padding: 14px 30px;
-      font-weight: ${theme.fontWeight.regular};
-      background-color: ${theme.colors.greenShades.g_60};
-      color: ${theme.colors.darkShades.d_11};
-    }
-
-    .green-button--disabled {
-      background: transparent;
-      border: none;
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
     }
   `}
 `

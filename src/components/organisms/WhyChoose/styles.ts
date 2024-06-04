@@ -1,18 +1,12 @@
 import styled, { css } from 'styled-components'
 
-export const UseCaseSection = styled.section`
-  h2 {
-    padding-bottom: 14px;
-  }
-`
-
-export const UseCaseArticle = styled.article`
+export const WhyChooseArticle = styled.article`
   display: flex;
   gap: 100px;
   padding-top: 80px;
 `
 
-export const CardsWrapper = styled.div`
+export const Cards = styled.ul`
   ${({ theme }) => css`
     position: relative;
     display: grid;

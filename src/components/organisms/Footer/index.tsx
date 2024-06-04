@@ -2,13 +2,15 @@ import { Link } from 'react-router-dom'
 
 import * as S from './styles'
 
-import logo from '../../assets/images/bank_logo.svg'
-import iconFacebook from '../../assets/images/facebook_icon.png'
-import iconLocal from '../../assets/images/icon_local.png'
-import iconMail from '../../assets/images/icon_mail.png'
-import iconTelephone from '../../assets/images/icon_telephone.png'
-import iconLinkedin from '../../assets/images/linkedin_icon.png'
-import iconTwitter from '../../assets/images/twitter_icon.png'
+import {
+  bankLogo,
+  facebookIcon,
+  iconLocal,
+  iconMail,
+  iconTelephone,
+  linkedinIcon,
+  twitterIcon
+} from '../../../assets/images'
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -22,7 +24,7 @@ const Footer = () => {
     <S.Footer>
       <div className="container">
         <S.Logo>
-          <img src={logo} alt="logo do banco" />
+          <img src={bankLogo} alt="logo do banco" />
           <h1>Next Finance</h1>
         </S.Logo>
         <S.Links>
@@ -59,17 +61,17 @@ const Footer = () => {
           <S.SocialLinks>
             <li>
               <a href="#">
-                <img src={iconFacebook} alt="Ícone do facebook" />
+                <img src={facebookIcon} alt="Ícone do facebook" />
               </a>
             </li>
             <li>
               <a href="#">
-                <img src={iconTwitter} alt="Ícone do X, antigo twitter" />
+                <img src={twitterIcon} alt="Ícone do X, antigo twitter" />
               </a>
             </li>
             <li>
               <a href="#">
-                <img src={iconLinkedin} alt="Ícone do Linkedin" />
+                <img src={linkedinIcon} alt="Ícone do Linkedin" />
               </a>
             </li>
           </S.SocialLinks>

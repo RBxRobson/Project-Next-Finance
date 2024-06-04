@@ -6,14 +6,14 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    width: 100%;
-    margin-top: 50px;
     padding: 20px 34px;
-
     border: 1px solid ${theme.colors.darkShades.d_15};
     border-radius: 100px;
     background-color: ${theme.colors.darkShades.d_11};
+
+    &.container {
+      margin: 50px auto 150px;
+    }
   `}
 `
 
@@ -60,14 +60,4 @@ export const Link = styled(RouterLink)`
 export const AccessButtons = styled.div`
   display: flex;
   align-items: center;
-  gap: 30px;
-
-  button {
-    cursor: pointer;
-  }
-`
-
-export const BtnSignUp = styled.button`
-  background: transparent;
-  border: none;
 `

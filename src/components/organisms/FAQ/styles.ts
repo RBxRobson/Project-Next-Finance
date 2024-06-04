@@ -11,7 +11,7 @@ export const CardsGrid = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 60px 0;
+  padding-top: 60px;
 `
 
 export const CardFAQ = styled(motion.div)`

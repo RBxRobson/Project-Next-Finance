@@ -7,6 +7,7 @@ export const Footer = styled.footer`
     margin-top: 150px;
 
     & > div {
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;

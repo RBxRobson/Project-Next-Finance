@@ -8,11 +8,5 @@ export const TabSelectorWrapper = styled.div`
     border: 2px solid ${theme.colors.darkShades.d_15};
     padding: 14px 16px;
     border-radius: 82px;
-
-    button {
-      cursor: pointer;
-      padding: 14px 24px;
-      border-radius: 140px;
-    }
   `}
 `

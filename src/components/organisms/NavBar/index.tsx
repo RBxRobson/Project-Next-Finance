@@ -2,7 +2,8 @@ import { useState } from 'react'
 
 import * as S from './styles'
 
-import logo from '../../assets/images/bank_logo.svg'
+import { bankLogo } from '../../../assets/images'
+import Button from '../../atoms/Button'
 
 const NavBar = () => {
   const [pageActive, setPageActive] = useState('home')
@@ -14,7 +15,7 @@ const NavBar = () => {
   return (
     <S.Header className="container">
       <S.Logo>
-        <img src={logo} alt="logo do banco" />
+        <img src={bankLogo} alt="logo do banco" />
         <h1>Next Finance</h1>
       </S.Logo>
       <S.Nav>
@@ -48,10 +49,12 @@ const NavBar = () => {
         </S.Link>
       </S.Nav>
       <S.AccessButtons>
-        <S.BtnSignUp type="button">Cadastre-se</S.BtnSignUp>
-        <button className="green-button" type="button">
-          Login
-        </button>
+        <Button
+          buttonText="Cadastre-se"
+          type="primary"
+          className="is--deactivated"
+        />
+        <Button buttonText="Login" type="primary" />
       </S.AccessButtons>
     </S.Header>
   )

@@ -1,10 +1,12 @@
-import CtaSection from '../../components/CtaSection'
-import FAQ from '../../components/FAQ'
-import Footer from '../../components/Footer'
-import Hero from '../../components/Hero'
-import NavBar from '../../components/NavBar'
-import OurProducts from '../../components/OurProducts'
-import UseCases from '../../components/UseCases'
+import {
+  CtaSection,
+  FAQ,
+  Footer,
+  Hero,
+  NavBar,
+  OurProducts,
+  WhyChoose
+} from '../../components/organisms'
 import { useGetHomeQuery } from '../../services/api'
 
 const Home = () => {
@@ -14,13 +16,20 @@ const Home = () => {
     return <h3>Carregando...</h3>
   }
 
+  const {
+    FAQ: faqData,
+    hero: heroData,
+    our_products: ourProductsData,
+    why_choose: whyChooseData
+  } = home
+
   return (
     <>
       <NavBar />
-      <Hero home={home} />
-      <OurProducts home={home} />
-      <UseCases home={home} />
-      <FAQ home={home} />
+      <Hero heroData={heroData} />
+      <OurProducts ourProductsData={ourProductsData} />
+      <WhyChoose whyChooseData={whyChooseData} />
+      <FAQ faqData={faqData} />
       <CtaSection />
       <Footer />
     </>

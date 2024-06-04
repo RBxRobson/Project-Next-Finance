@@ -1,5 +1,7 @@
 import * as S from './styles'
 
+import Button from '../../atoms/Button'
+
 type Props = {
   firstBtn: {
     name: string
@@ -15,22 +17,18 @@ type Props = {
 const TabSelector = ({ firstBtn, secondBtn, position }: Props) => {
   return (
     <S.TabSelectorWrapper>
-      <button
-        className={
-          position === 'left' ? 'green-button' : 'green-button--disabled'
-        }
+      <Button
+        type="secondary"
+        buttonText={firstBtn.name}
+        className={position === 'left' ? '' : 'is--deactivated'}
         onClick={firstBtn.onClick}
-      >
-        {firstBtn.name}
-      </button>
-      <button
-        className={
-          position === 'right' ? 'green-button' : 'green-button--disabled'
-        }
+      />
+      <Button
+        type="secondary"
+        buttonText={secondBtn.name}
+        className={position === 'right' ? '' : 'is--deactivated'}
         onClick={secondBtn.onClick}
-      >
-        {secondBtn.name}
-      </button>
+      />
     </S.TabSelectorWrapper>
   )
 }

@@ -1,23 +1,7 @@
 import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
-export const SectionContent = styled.section`
-  padding: 150px 0;
-`
-
-export const HeaderSection = styled.header`
-  p {
-    max-width: 910px;
-  }
-
-  & > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-`
-
-export const ArticleWrapper = styled(motion.div)`
+export const List = styled(motion.ul)`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -39,7 +23,7 @@ export const ArticleWrapper = styled(motion.div)`
   `}
 `
 
-export const Article = styled.article`
+export const ListItem = styled.li`
   ${({ theme }) => css`
     text-align: center;
     margin-top: 100px;

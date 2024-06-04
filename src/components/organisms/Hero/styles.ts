@@ -1,10 +1,10 @@
-import styled, { css, keyframes } from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const HeroContent = styled.div`
+import { Section } from '../../templates/SectionContainer/style'
+
+export const HeroContent = styled(Section)`
   position: relative;
   display: flex;
-  margin-top: 54px;
-  padding-top: 100px;
 `
 
 export const Tag = styled.div`
@@ -34,10 +34,6 @@ export const HeroTitleWrapper = styled.div`
       padding-bottom: 50px;
     }
   `}
-`
-
-export const BtnOpenAccount = styled.button`
-  padding: 18px 30px;
 `
 
 export const AbstractDesign = styled.img`

@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components'
 
-export const CtaContent = styled.div`
+import { Section } from '../../templates/SectionContainer/style'
+
+export const CtaContent = styled(Section)`
   ${({ theme }) => css`
     position: relative;
     display: flex;
@@ -23,18 +25,13 @@ export const CtaContent = styled.div`
       max-width: 80%;
     }
 
-    h3 {
-      margin-bottom: 14px;
+    h2 {
       font-weight: 400;
       font-size: ${theme.fontSize.XL};
 
       span {
         font-size: ${theme.fontSize.XL};
       }
-    }
-
-    button {
-      padding: 18px 30px;
     }
   `}
 `
