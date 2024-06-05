@@ -19,8 +19,6 @@ export const ButtonPrimary = styled(motion.button)`
 `
 
 export const ButtonSecondary = styled(ButtonPrimary)`
-  ${({ theme }) => css`
-    border-radius: 140px;
-    padding: 14px 24px;
-  `}
+  border-radius: 140px;
+  padding: 14px 24px;
 `
