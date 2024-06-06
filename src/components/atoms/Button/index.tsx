@@ -1,3 +1,5 @@
+import theme from '../../../styles/themes'
+
 import * as S from './style'
 
 type Props = {
@@ -9,9 +11,19 @@ type Props = {
 
 const Button = ({ buttonText, type, className, onClick }: Props) => {
   return type === 'primary' ? (
-    <S.ButtonPrimary className={className}>{buttonText}</S.ButtonPrimary>
+    <S.ButtonPrimary
+      className={className}
+      whileTap={{ scale: 1.1 }}
+      whileHover={{ filter: 'brightness(0.9)' }}
+    >
+      {buttonText}
+    </S.ButtonPrimary>
   ) : (
-    <S.ButtonSecondary className={className} onClick={onClick}>
+    <S.ButtonSecondary
+      className={className}
+      onClick={onClick}
+      whileTap={{ scale: 1.1 }}
+    >
       {buttonText}
     </S.ButtonSecondary>
   )
