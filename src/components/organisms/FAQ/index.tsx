@@ -15,9 +15,7 @@ const FAQ = ({ faqData }: Props) => {
   return (
     <SectionContainer
       titleSection={{ title: 'Perguntas ', markText: 'Frequentes' }}
-      descriptionSection={`
-        Você tem uma dúvida que não foi resolvida?
-        Entre em contato com o suporte pelo email: nextfinance@exemplo.com`}
+      descriptionSection={faqData.description}
     >
       <>
         <S.CardsGrid>
