@@ -46,6 +46,7 @@ declare type Home = {
     }
   }
   FAQ: {
+    description: string
     cards: CardFAQ[]
   }
 }
