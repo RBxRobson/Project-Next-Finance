@@ -23,6 +23,12 @@ declare type CardFAQ = {
   description: string
 }
 
+declare type CardTestimony = {
+  id: number
+  name: string
+  testimony: string
+}
+
 declare type Home = {
   hero: {
     description: string
@@ -48,5 +54,10 @@ declare type Home = {
   FAQ: {
     description: string
     cards: CardFAQ[]
+  }
+  our_testimonials: {
+    description: string
+    for_people: CardTestimony[]
+    for_businesses: CardTestimony[]
   }
 }
