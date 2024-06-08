@@ -4,10 +4,13 @@ import bankLogo from './bank_logo.svg'
 import radialDesignLeft from './design_radius_lf.svg'
 import radialDesignRight from './design_radius_right.svg'
 import facebookIcon from './facebook_icon.png'
+import iconLeft from './icon_left.png'
 import iconLocal from './icon_local.png'
 import iconMail from './icon_mail.png'
+import iconRight from './icon_right.png'
 import iconTelephone from './icon_telephone.png'
 import linkedinIcon from './linkedin_icon.png'
+import testimonyHeader from './testimony_header.svg'
 import twitterIcon from './twitter_icon.png'
 import verifyIcon from './verify_icon.png'
 
@@ -22,5 +25,8 @@ export {
   bankLogo,
   abstractDesignHero,
   radialDesignRight,
-  radialDesignLeft
+  radialDesignLeft,
+  testimonyHeader,
+  iconLeft,
+  iconRight
 }
