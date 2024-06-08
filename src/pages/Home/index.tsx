@@ -5,6 +5,7 @@ import {
   Hero,
   NavBar,
   OurProducts,
+  OurTestimonials,
   WhyChoose
 } from '../../components/organisms'
 import { useGetHomeQuery } from '../../services/api'
@@ -20,7 +21,8 @@ const Home = () => {
     FAQ: faqData,
     hero: heroData,
     our_products: ourProductsData,
-    why_choose: whyChooseData
+    why_choose: whyChooseData,
+    our_testimonials: ourTestimonialsData
   } = home
 
   return (
@@ -29,6 +31,7 @@ const Home = () => {
       <Hero heroData={heroData} />
       <OurProducts ourProductsData={ourProductsData} />
       <WhyChoose whyChooseData={whyChooseData} />
+      <OurTestimonials ourTestimonialsData={ourTestimonialsData} />
       <FAQ faqData={faqData} />
       <CtaSection />
       <Footer />
