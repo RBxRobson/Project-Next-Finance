@@ -15,6 +15,8 @@ const OurProducts = ({ ourProductsData }: Props) => {
   const productsForBusinesses = ourProductsData.for_businesses
 
   const [position, setPosition] = useState('left')
+  const products =
+    position === 'left' ? productsForPeople : productsForBusinesses
 
   return (
     <SectionContainer
@@ -34,41 +36,22 @@ const OurProducts = ({ ourProductsData }: Props) => {
         />
       }
     >
-      <>
-        <AnimatePresence mode="wait">
-          {position === 'left' && (
-            <S.List
-              key="left"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-            >
-              {productsForPeople.map((product) => (
-                <S.ListItem key={product.id}>
-                  <img src={product.icon} />
-                  <h4>{product.title}</h4>
-                  <p>{product.description}</p>
-                </S.ListItem>
-              ))}
-            </S.List>
-          )}
-          {position === 'right' && (
-            <S.List
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-            >
-              {productsForBusinesses.map((product) => (
-                <S.ListItem key={product.id}>
-                  <img src={product.icon} />
-                  <h4>{product.title}</h4>
-                  <p>{product.description}</p>
-                </S.ListItem>
-              ))}
-            </S.List>
-          )}
-        </AnimatePresence>
-      </>
+      <AnimatePresence mode="wait">
+        <S.List
+          key={position}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+        >
+          {products.map((product) => (
+            <S.ListItem key={product.id}>
+              <img src={product.icon} />
+              <h4>{product.title}</h4>
+              <p>{product.description}</p>
+            </S.ListItem>
+          ))}
+        </S.List>
+      </AnimatePresence>
     </SectionContainer>
   )
 }
