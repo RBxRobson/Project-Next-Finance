@@ -37,5 +37,13 @@ export default {
     L: '24px',
     XL: '38px',
     XXL: '48px'
+  },
+  breakpoints: {
+    xs: '320px',
+    sm: '576px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
+    xxl: '1400px'
   }
 }
