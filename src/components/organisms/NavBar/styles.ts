@@ -1,6 +1,10 @@
 import { Link as RouterLink } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 
+import { breakpoint } from '../../../styles/themes'
+
+import { ButtonPrimary } from '../../atoms/Button/style'
+
 export const Header = styled.header`
   ${({ theme }) => css`
     display: flex;
@@ -13,6 +17,13 @@ export const Header = styled.header`
 
     &.container {
       margin: 50px auto 150px;
+    }
+
+    // Breakpoint Desktops
+    ${breakpoint(theme.breakpoints.xl)} {
+      ${ButtonPrimary} {
+        font-size: ${theme.fontSize.xxs};
+      }
     }
   `}
 `
@@ -32,13 +43,32 @@ export const Logo = styled.div`
       font-size: ${theme.fontSize.md};
       font-weight: ${theme.fontWeight.medium};
     }
+
+    // Breakpoint Desktops
+    ${breakpoint(theme.breakpoints.xl)} {
+      h1 {
+        font-size: ${theme.fontSize.sm};
+      }
+
+      img {
+        width: 36px;
+        height: 36px;
+      }
+    }
   `}
 `
 
 export const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: 26px;
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: 26px;
+
+    // Breakpoint Desktops
+    ${breakpoint(theme.breakpoints.xl)} {
+      gap: 20px;
+    }
+  `}
 `
 
 export const Link = styled(RouterLink)`
@@ -54,10 +84,20 @@ export const Link = styled(RouterLink)`
       background-color: ${theme.colors.darkShades.d_15};
       padding: 12px 24px;
     }
+
+    // Breakpoint Desktops
+    ${breakpoint(theme.breakpoints.xl)} {
+      font-size: ${theme.fontSize.xxs};
+    }
   `}
 `
 
 export const AccessButtons = styled.div`
   display: flex;
   align-items: center;
+
+  // Necessário para manter alinhamento da navbar
+  .pd-lf-0 {
+    padding-left: 0;
+  }
 `

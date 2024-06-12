@@ -52,7 +52,7 @@ const NavBar = () => {
         <Button
           buttonText="Cadastre-se"
           type="primary"
-          className="is--deactivated"
+          className="is--deactivated pd-lf-0"
         />
         <Button buttonText="Login" type="primary" />
       </S.AccessButtons>
