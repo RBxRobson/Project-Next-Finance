@@ -2,6 +2,7 @@ import { createGlobalStyle, css } from 'styled-components'
 
 import lexendFont from '../assets/fonts/Lexend-VariableFont_wght.ttf'
 import abstract_svg from '../assets/images/abstract_design_1.svg'
+import { breakpoint } from './themes'
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -15,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
       padding: 0;
       margin: 0;
       color: ${theme.colors.absoluteColors.white};
-      font-size: ${theme.fontSize.S};
+      font-size: ${theme.fontSize.xs};
       font-family: lexend, sans-serif;
       list-style: none;
     }
@@ -41,8 +42,15 @@ const GlobalStyles = createGlobalStyle`
 
     .container {
       max-width: 1600px;
-      width: 100%;
+      width: 90%;
       margin: 0 auto;
+    }
+
+    // Breakpoint Desktops
+    ${breakpoint(theme.breakpoints.xl)} {
+      .container {
+        width: 95%;
+      }
     }
   `}
 `

@@ -32,18 +32,22 @@ export default {
     bold: 700
   },
   fontSize: {
-    S: '18px',
-    M: '22px',
-    L: '24px',
-    XL: '38px',
-    XXL: '48px'
+    xxs: '16px',
+    xs: '18px',
+    sm: '20px',
+    md: '22px',
+    lg: '24px',
+    xl: '38px',
+    xxl: '48px'
   },
   breakpoints: {
-    xs: '320px',
-    sm: '576px',
-    md: '768px',
-    lg: '992px',
-    xl: '1200px',
-    xxl: '1400px'
+    xs: '320px', // Extra small devices (phones)
+    sm: '576px', // Small devices (landscape phones)
+    md: '768px', // Medium devices (tablets)
+    lg: '992px', // Large devices (desktops)
+    xl: '1200px', // Extra large devices (large desktops)
+    xxl: '1400px' // Extra extra large devices (larger desktops)
   }
 }
+
+export const breakpoint = (size: string) => `@media (max-width: ${size})`
