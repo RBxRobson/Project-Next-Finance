@@ -29,7 +29,7 @@ export const Logo = styled.div`
     }
 
     h1 {
-      font-size: ${theme.fontSize.M};
+      font-size: ${theme.fontSize.md};
       font-weight: ${theme.fontWeight.medium};
     }
   `}

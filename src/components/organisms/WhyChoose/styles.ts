@@ -52,7 +52,7 @@ export const Card = styled.li`
 
     p {
       text-align: center;
-      font-size: ${theme.fontSize.S};
+      font-size: ${theme.fontSize.xs};
       font-weight: ${theme.fontWeight.regular};
     }
   `}
@@ -61,7 +61,7 @@ export const Card = styled.li`
 export const DescriptionContainer = styled.div`
   ${({ theme }) => css`
     h4 {
-      font-size: ${theme.fontSize.L};
+      font-size: ${theme.fontSize.lg};
       margin-bottom: 14px;
     }
   `}
@@ -74,7 +74,7 @@ export const StaticsWrapper = styled.ul`
     padding: 62px 0;
 
     span {
-      font-size: ${theme.fontSize.XXL};
+      font-size: ${theme.fontSize.xxl};
       color: ${theme.colors.greenShades.g_60};
     }
   `}

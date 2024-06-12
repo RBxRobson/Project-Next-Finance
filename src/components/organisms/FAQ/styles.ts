@@ -35,7 +35,7 @@ export const CardHeader = styled.header`
     cursor: pointer;
 
     h4 {
-      font-size: ${theme.fontSize.M};
+      font-size: ${theme.fontSize.md};
       font-weight: ${theme.fontWeight.regular};
     }
   `}

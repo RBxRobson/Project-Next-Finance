@@ -6,12 +6,12 @@ export const Section = styled.section`
 
     h2 {
       margin-bottom: 14px;
-      font-size: ${theme.fontSize.XXL};
+      font-size: ${theme.fontSize.xxl};
       font-weight: ${theme.fontWeight.medium};
 
       span {
         color: ${theme.colors.greenShades.g_60};
-        font-size: ${theme.fontSize.XXL};
+        font-size: ${theme.fontSize.xxl};
       }
     }
   `}

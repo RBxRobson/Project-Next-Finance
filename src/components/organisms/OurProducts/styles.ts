@@ -35,9 +35,9 @@ export const ListItem = styled.li`
     }
 
     h4 {
-      font-size: font-weight: ${theme.fontSize.L};
+      font-size: ${theme.fontSize.lg};
       margin: 30px 0 20px;
-      font-weight: regular;
+      font-weight: ${theme.fontWeight.regular};
     }
 
     p {

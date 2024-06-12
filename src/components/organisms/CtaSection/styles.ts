@@ -27,10 +27,10 @@ export const CtaContent = styled(Section)`
 
     h2 {
       font-weight: 400;
-      font-size: ${theme.fontSize.XL};
+      font-size: ${theme.fontSize.xl};
 
       span {
-        font-size: ${theme.fontSize.XL};
+        font-size: ${theme.fontSize.xl};
       }
     }
   `}

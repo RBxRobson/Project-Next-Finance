@@ -11,7 +11,6 @@ export const Footer = styled.footer`
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-size: ${theme.fontSize.S};
       font-weight: ${theme.fontWeight.regular};
     }
   `}
@@ -29,7 +28,7 @@ export const Logo = styled.div`
     }
 
     h1 {
-      font-size: ${theme.fontSize.M};
+      font-size: ${theme.fontSize.md};
       font-weight: ${theme.fontWeight.medium};
     }
   `}
@@ -87,7 +86,6 @@ export const FinalContentWrapper = styled.div`
     div {
       a {
         color: ${theme.colors.darkShades.d_70};
-        font-size: ${theme.fontSize.S};
         font-weight: ${theme.fontWeight.light};
       }
 
