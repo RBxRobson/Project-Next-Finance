@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
-export const CarouselWrapper = styled.div`
+export const Carousel = styled.div`
   display: flex;
   align-items: center;
   gap: 50px;
   padding-top: 100px;
 `
 
-export const CarouselButton = styled.button`
+export const CarouselButton = styled(motion.button)`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
@@ -17,20 +17,23 @@ export const CarouselButton = styled.button`
     background-color: ${theme.colors.darkShades.d_11};
     padding: 14px;
     border-radius: 100px;
+    transition: opacity ease 300ms;
 
     img {
       width: 34px;
       height: 34px;
     }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
   `}
 `
 
-export const List = styled(motion.ul)`
+export const CarouselWrapper = styled.div`
   ${({ theme }) => css`
-    display: flex;
-    margin: 0 auto;
-    gap: 80px;
-    width: 1400px;
+    width: 100%;
     overflow-x: hidden;
     position: relative;
 
@@ -40,24 +43,30 @@ export const List = styled(motion.ul)`
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 400px;
+      width: 100px;
       pointer-events: none;
       z-index: 2;
     }
 
     &::before {
       left: 0;
-      box-shadow: inset 250px 0 300px -60px ${theme.colors.darkShades.d_10};
+      box-shadow: inset 50px 0 100px -60px ${theme.colors.darkShades.d_10};
     }
 
     &::after {
       right: 0;
-      box-shadow: inset -250px 0 300px -60px ${theme.colors.darkShades.d_10};
+      box-shadow: inset -50px 0 100px -60px ${theme.colors.darkShades.d_10};
     }
   `}
 `
 
-export const Item = styled(motion.li)`
+export const List = styled(motion.ul)`
+  display: flex;
+  margin: 0 auto;
+  gap: 80px;
+`
+
+export const ListItem = styled(motion.li)`
   display: flex;
   flex-direction: column;
   min-width: 400px;
