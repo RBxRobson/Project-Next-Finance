@@ -45,7 +45,7 @@ export default {
     xs: '320px', // Extra small devices (phones)
     sm: '576px', // Small devices (landscape phones)
     md: '768px', // Medium devices (tablets)
-    lg: '992px', // Large devices (desktops)
+    lg: '992px', // Large devices (tablets)
     xl: '1200px', // Extra large devices (large desktops)
     xxl: '1400px' // Extra extra large devices (larger desktops)
   }
