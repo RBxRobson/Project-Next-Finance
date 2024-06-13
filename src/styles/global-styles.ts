@@ -52,6 +52,13 @@ const GlobalStyles = createGlobalStyle`
         width: 95%;
       }
     }
+
+    // Breakpoint Mobile
+    ${breakpoint(theme.breakpoints.sm)} {
+      * {
+        font-size: ${theme.fontSize.xxs};
+      }
+    }
   `}
 `
 
