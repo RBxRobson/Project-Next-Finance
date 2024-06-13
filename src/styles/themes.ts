@@ -37,6 +37,7 @@ export default {
     sm: '20px',
     md: '22px',
     lg: '24px',
+    lgmd: '30px',
     xl: '38px',
     xxl: '48px'
   },
