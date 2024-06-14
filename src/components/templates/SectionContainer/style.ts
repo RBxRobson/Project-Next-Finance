@@ -17,6 +17,7 @@ export const Section = styled.section`
       }
     }
 
+    // Breakpoint Desktop 1200px
     ${breakpoint(theme.breakpoints.xl)} {
       h2 {
         font-size: ${theme.fontSize.xl};
@@ -27,7 +28,12 @@ export const Section = styled.section`
       }
     }
 
-    // Breakpoint Mobile
+    // Breakpoint Tablet 992px
+    ${breakpoint(theme.breakpoints.lg)} {
+      text-align: center;
+    }
+
+    // Breakpoint Mobile 576px
     ${breakpoint(theme.breakpoints.sm)} {
       h2 {
         font-size: ${theme.fontSize.lgmd};
@@ -41,11 +47,20 @@ export const Section = styled.section`
 `
 
 export const WrapperTabSelector = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
 
-  p {
-    max-width: 910px;
-  }
+    p {
+      max-width: 910px;
+    }
+
+    // Breakpoint Tablet 992px
+    ${breakpoint(theme.breakpoints.lg)} {
+      flex-direction: column;
+      gap: 20px;
+    }
+  `}
 `
