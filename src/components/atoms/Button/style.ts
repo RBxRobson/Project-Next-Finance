@@ -5,6 +5,7 @@ export const ButtonPrimary = styled(motion.button)`
   ${({ theme }) => css`
     border: none;
     cursor: pointer;
+    white-space: nowrap;
     border-radius: 82px;
     padding: 14px 30px;
     font-weight: ${theme.fontWeight.regular};
