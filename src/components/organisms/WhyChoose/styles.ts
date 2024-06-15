@@ -1,9 +1,26 @@
 import styled, { css } from 'styled-components'
 
+import { breakpoint } from '../../../styles/themes'
+
 export const WhyChooseArticle = styled.article`
-  display: flex;
-  gap: 100px;
-  padding-top: 80px;
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    padding-top: 80px;
+
+    // Breakpoint Desktop 1200px
+    ${breakpoint(theme.breakpoints.xl)} {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 0px;
+
+      &.column-reverse {
+        flex-direction: column-reverse;
+      }
+    }
+  `}
 `
 
 export const Cards = styled.ul`
@@ -30,13 +47,18 @@ export const Cards = styled.ul`
         top: 0;
       }
     }
+
+    // Breakpoint Desktop 576px
+    ${breakpoint(theme.breakpoints.sm)} {
+      grid-template-columns: 1fr;
+    }
   `}
 `
 
 export const Card = styled.li`
   ${({ theme }) => css`
     z-index: 1;
-    width: 314px;
+    max-width: 314px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,6 +77,11 @@ export const Card = styled.li`
       font-size: ${theme.fontSize.xs};
       font-weight: ${theme.fontWeight.regular};
     }
+
+    // Breakpoint Desktop 1200px
+    ${breakpoint(theme.breakpoints.xl)} {
+      max-width: 100%;
+    }
   `}
 `
 
@@ -69,13 +96,19 @@ export const DescriptionContainer = styled.div`
 
 export const StaticsWrapper = styled.ul`
   ${({ theme }) => css`
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
     padding: 62px 0;
 
     span {
       font-size: ${theme.fontSize.xxl};
       color: ${theme.colors.greenShades.g_60};
+
+      // Breakpoint Desktop 576px
+      ${breakpoint(theme.breakpoints.sm)} {
+        font-size: ${theme.fontSize.lgmd};
+      }
     }
   `}
 `

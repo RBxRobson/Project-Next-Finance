@@ -25,7 +25,7 @@ const WhyChoose = ({ whyChooseData }: Props) => {
       descriptionSection={whyChooseData.description}
     >
       <>
-        <S.WhyChooseArticle>
+        <S.WhyChooseArticle className="column-reverse">
           <S.Cards>
             <img src={radialDesignRight} className="position_left" />
             {forPeopleCards.map((card) => (
@@ -36,7 +36,7 @@ const WhyChoose = ({ whyChooseData }: Props) => {
             ))}
           </S.Cards>
           <S.DescriptionContainer>
-            <h4>Para Pessoas</h4>
+            <h4>Pessoa Física</h4>
             <p>{forPeopleDescription}</p>
             <S.StaticsWrapper>
               {forPeopleStatistics.map((statistic) => (
@@ -50,7 +50,7 @@ const WhyChoose = ({ whyChooseData }: Props) => {
         </S.WhyChooseArticle>
         <S.WhyChooseArticle>
           <S.DescriptionContainer>
-            <h4>Para empresas</h4>
+            <h4>Empresas</h4>
             <p>{forBusinessesDescription}</p>
             <S.StaticsWrapper>
               {forBusinessesStatistics.map((statistic) => (
