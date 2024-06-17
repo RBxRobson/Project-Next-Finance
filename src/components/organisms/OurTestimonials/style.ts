@@ -50,12 +50,12 @@ export const CarouselWrapper = styled.div`
 
     &::before {
       left: 0;
-      box-shadow: inset 50px 0 100px -60px ${theme.colors.darkShades.d_10};
+      box-shadow: inset 50px 0 100px -30px ${theme.colors.darkShades.d_10};
     }
 
     &::after {
       right: 0;
-      box-shadow: inset -50px 0 100px -60px ${theme.colors.darkShades.d_10};
+      box-shadow: inset -50px 0 100px -30px ${theme.colors.darkShades.d_10};
     }
   `}
 `
