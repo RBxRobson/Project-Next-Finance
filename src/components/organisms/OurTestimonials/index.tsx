@@ -10,15 +10,19 @@ type Props = {
   ourTestimonialsData: Home['our_testimonials']
 }
 
+type StateTestimony = {
+  state: 'forPeople' | 'forBusinesses'
+}
+
 const OurTestimonials = ({ ourTestimonialsData }: Props) => {
-  const testimonialsForPeople = ourTestimonialsData.for_people
-  const testimonialsForBusinesses = ourTestimonialsData.for_businesses
+  const {
+    for_businesses: testimonialsForBusinesses,
+    for_people: testimonialsForPeople
+  } = ourTestimonialsData
 
   const [position, setPosition] = useState('left')
   const [carouselIndex, setCarouselIndex] = useState(0)
-
-  const testimonials =
-    position === 'left' ? testimonialsForPeople : testimonialsForBusinesses
+  const [testimonials, setTestimonials] = useState(testimonialsForPeople)
 
   const handleScrollLeft = () => {
     setCarouselIndex((prevIndex) => prevIndex - 1)
@@ -26,6 +30,18 @@ const OurTestimonials = ({ ourTestimonialsData }: Props) => {
 
   const handleScrollRight = () => {
     setCarouselIndex((prevIndex) => prevIndex + 1)
+  }
+
+  const setStateTestimony = (stateTestimony: StateTestimony) => {
+    if (stateTestimony.state === 'forPeople') {
+      setPosition('left')
+      setTestimonials(testimonialsForPeople)
+    } else if (stateTestimony.state === 'forBusinesses') {
+      setPosition('right')
+      setTestimonials(testimonialsForBusinesses)
+    }
+
+    setCarouselIndex(0)
   }
 
   return (
@@ -38,15 +54,13 @@ const OurTestimonials = ({ ourTestimonialsData }: Props) => {
           firstBtn={{
             name: 'Pessoa Física',
             onClick: () => {
-              setPosition('left')
-              setCarouselIndex(0)
+              setStateTestimony({ state: 'forPeople' })
             }
           }}
           secondBtn={{
             name: 'Empresa',
             onClick: () => {
-              setPosition('right')
-              setCarouselIndex(0)
+              setStateTestimony({ state: 'forBusinesses' })
             }
           }}
         />
