@@ -72,8 +72,8 @@ export const ListItem = styled(motion.li)`
   min-width: 400px;
   gap: 50px;
   text-align: center;
-  position: relative; /* Necessário para aplicar z-index */
-  z-index: 1; /* Garante que o Item esteja abaixo dos pseudo-elementos do List */
+  position: relative;
+  z-index: 1;
 
   h4 {
     margin-top: auto;
