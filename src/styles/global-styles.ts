@@ -46,6 +46,11 @@ const GlobalStyles = createGlobalStyle`
       margin: 0 auto;
     }
 
+    // Estilização do root do swiper
+    :root {
+      --swiper-theme-color: ${theme.colors.greenShades.g_60};
+    }
+
     // Breakpoint Desktops
     ${breakpoint(theme.breakpoints.xl)} {
       .container {
