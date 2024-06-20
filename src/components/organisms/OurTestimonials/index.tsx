@@ -1,10 +1,12 @@
-import { AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { testimonyHeader, iconLeft, iconRight } from '../../../assets/images'
+import theme from '../../../styles/themes'
+import * as S from './styles'
+
+import { testimonyHeader } from '../../../assets/images'
 import TabSelector from '../../molecules/TabSelector'
 import SectionContainer from '../../templates/SectionContainer'
-import * as S from './style'
 
 type Props = {
   ourTestimonialsData: Home['our_testimonials']
@@ -20,17 +22,12 @@ const OurTestimonials = ({ ourTestimonialsData }: Props) => {
     for_people: testimonialsForPeople
   } = ourTestimonialsData
 
+  const { xl, md } = theme.breakpoints
+  const desktop = parseInt(xl, 10)
+  const tablet = parseInt(md, 10)
+
   const [position, setPosition] = useState('left')
-  const [carouselIndex, setCarouselIndex] = useState(0)
   const [testimonials, setTestimonials] = useState(testimonialsForPeople)
-
-  const handleScrollLeft = () => {
-    setCarouselIndex((prevIndex) => prevIndex - 1)
-  }
-
-  const handleScrollRight = () => {
-    setCarouselIndex((prevIndex) => prevIndex + 1)
-  }
 
   const setStateTestimony = (stateTestimony: StateTestimony) => {
     if (stateTestimony.state === 'forPeople') {
@@ -40,8 +37,6 @@ const OurTestimonials = ({ ourTestimonialsData }: Props) => {
       setPosition('right')
       setTestimonials(testimonialsForBusinesses)
     }
-
-    setCarouselIndex(0)
   }
 
   return (
@@ -67,41 +62,29 @@ const OurTestimonials = ({ ourTestimonialsData }: Props) => {
       }
     >
       <S.Carousel>
-        <S.CarouselButton
-          whileTap={{ scale: 1.2 }}
-          onClick={handleScrollLeft}
-          disabled={carouselIndex === 0}
+        <Swiper
+          slidesPerView={1}
+          navigation
+          pagination
+          breakpoints={{
+            [tablet]: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            [desktop]: {
+              slidesPerView: 3,
+              spaceBetween: 40
+            }
+          }}
         >
-          <img src={iconLeft} alt="Voltar" />
-        </S.CarouselButton>
-        <S.CarouselWrapper>
-          <S.List
-            animate={{ x: carouselIndex * -480 }}
-            transition={{ type: 'just' }}
-          >
-            <AnimatePresence>
-              {testimonials.map((testimony) => (
-                <S.ListItem
-                  key={testimony.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                >
-                  <img src={testimonyHeader} />
-                  <p>{testimony.testimony}</p>
-                  <h4>{testimony.name}</h4>
-                </S.ListItem>
-              ))}
-            </AnimatePresence>
-          </S.List>
-        </S.CarouselWrapper>
-        <S.CarouselButton
-          whileTap={{ scale: 1.2 }}
-          onClick={handleScrollRight}
-          disabled={carouselIndex === testimonials.length - 3}
-        >
-          <img src={iconRight} alt="Avançar" />
-        </S.CarouselButton>
+          {testimonials.map((testimony) => (
+            <SwiperSlide key={testimony.id}>
+              <img src={testimonyHeader} />
+              <p>{testimony.testimony}</p>
+              <h4>{testimony.name}</h4>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </S.Carousel>
     </SectionContainer>
   )
