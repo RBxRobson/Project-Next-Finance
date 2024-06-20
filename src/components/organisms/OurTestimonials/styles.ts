@@ -1,11 +1,11 @@
+import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
-import { Swiper } from 'swiper'
 
 import { breakpoint } from '../../../styles/themes'
 
 import { iconLeft, iconRight } from '../../../assets/images'
 
-export const Carousel = styled.div`
+export const Carousel = styled(motion.div)`
   ${({ theme }) => css`
     position: relative;
     padding: 50px 80px;
@@ -23,40 +23,39 @@ export const Carousel = styled.div`
         width: 100px;
         pointer-events: none;
         z-index: 2;
+
+        ${breakpoint(theme.breakpoints.md)} {
+          width: 50px;
+        }
       }
 
       &::before {
         left: 80px;
         box-shadow: inset 50px 0 100px -30px ${theme.colors.darkShades.d_10};
+
+        ${breakpoint(theme.breakpoints.md)} {
+          box-shadow: inset 20px 0 50px -15px ${theme.colors.darkShades.d_10};
+        }
       }
 
       &::after {
         right: 80px;
         box-shadow: inset -50px 0 100px -30px ${theme.colors.darkShades.d_10};
+
+        ${breakpoint(theme.breakpoints.md)} {
+          box-shadow: inset -20px 0 50px -15px ${theme.colors.darkShades.d_10};
+        }
       }
 
-      .swiper-wrapper {
-        // Swiper Cards
-        .swiper-slide {
-          display: flex;
-          flex-direction: column;
-          text-align: center;
-          height: auto;
-          gap: 50px;
-
-          h4 {
-            margin-top: auto;
-
-            ${breakpoint(theme.breakpoints.md)} {
-              margin-top: 0;
-            }
-          }
-        }
+      .swiper-slide {
+        height: auto;
       }
 
       //Botões Swiper
       .swiper-button-prev,
       .swiper-button-next {
+        top: 50%;
+        transform: translateY(-50%);
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -89,6 +88,24 @@ export const Carousel = styled.div`
       //Icone botão próximo
       .swiper-button-prev::after {
         background-image: url(${iconLeft});
+      }
+    }
+  `}
+`
+
+export const Testimony = styled(motion.div)`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    gap: 50px;
+
+    h4 {
+      margin-top: auto;
+
+      ${breakpoint(theme.breakpoints.md)} {
+        margin-top: 0;
       }
     }
   `}

@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -79,9 +80,21 @@ const OurTestimonials = ({ ourTestimonialsData }: Props) => {
         >
           {testimonials.map((testimony) => (
             <SwiperSlide key={testimony.id}>
-              <img src={testimonyHeader} />
-              <p>{testimony.testimony}</p>
-              <h4>{testimony.name}</h4>
+              <AnimatePresence mode="wait">
+                <S.Testimony
+                  key={position}
+                  initial={{ opacity: 0, height: 'calc(100% - 200px)' }}
+                  animate={{ opacity: 1, height: '100%' }}
+                  exit={{ opacity: 0, height: 'calc(100% - 200px)' }}
+                  transition={{
+                    duration: 0.8
+                  }}
+                >
+                  <img src={testimonyHeader} />
+                  <p>{testimony.testimony}</p>
+                  <h4>{testimony.name}</h4>
+                </S.Testimony>
+              </AnimatePresence>
             </SwiperSlide>
           ))}
         </Swiper>
