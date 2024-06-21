@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 
+import theme from '../../../styles/themes'
 import * as S from './styles'
 
 import SectionContainer from '../../templates/SectionContainer'
@@ -27,10 +28,10 @@ const FAQ = ({ faqData }: Props) => {
                 onClick={() => setExpanded(isOpen ? false : i)}
                 variants={{
                   open: {
-                    filter: 'brightness(1)'
+                    border: `1px solid ${theme.colors.darkShades.d_15}`
                   },
                   closed: {
-                    filter: 'brightness(2)'
+                    border: `1px solid ${theme.colors.darkShades.d_70}`
                   }
                 }}
                 animate={isOpen ? 'closed' : 'open'}
@@ -60,7 +61,7 @@ const FAQ = ({ faqData }: Props) => {
                         type: 'tween'
                       }}
                       variants={{
-                        open: { opacity: 1, height: 'auto', marginTop: 20 },
+                        open: { opacity: 1, height: 'auto', marginTop: 40 },
                         closed: { opacity: 0, height: 0, marginTop: 0 }
                       }}
                       initial="closed"
