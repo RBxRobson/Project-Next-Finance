@@ -10,6 +10,11 @@ export const Carousel = styled(motion.div)`
     position: relative;
     padding: 50px 80px;
 
+    // Breakpoint Desktop 576px
+    ${breakpoint(theme.breakpoints.sm)} {
+      padding: 150px 0;
+    }
+
     // Estilos do swiper
     .swiper {
       position: static;
@@ -36,6 +41,9 @@ export const Carousel = styled(motion.div)`
         ${breakpoint(theme.breakpoints.md)} {
           box-shadow: inset 20px 0 50px -15px ${theme.colors.darkShades.d_10};
         }
+        ${breakpoint(theme.breakpoints.sm)} {
+          left: 0;
+        }
       }
 
       &::after {
@@ -44,6 +52,9 @@ export const Carousel = styled(motion.div)`
 
         ${breakpoint(theme.breakpoints.md)} {
           box-shadow: inset -20px 0 50px -15px ${theme.colors.darkShades.d_10};
+        }
+        ${breakpoint(theme.breakpoints.sm)} {
+          right: 0;
         }
       }
 
@@ -89,6 +100,22 @@ export const Carousel = styled(motion.div)`
       .swiper-button-prev::after {
         background-image: url(${iconLeft});
       }
+
+      // Breakpoint Desktop 576px
+      ${breakpoint(theme.breakpoints.sm)} {
+        //Icone botão voltar
+        .swiper-button-next {
+          top: auto;
+          bottom: 25px;
+          right: calc(50% - 80px);
+        }
+        //Icone botão próximo
+        .swiper-button-prev {
+          top: auto;
+          bottom: 25px;
+          left: calc(50% - 80px);
+        }
+      }
     }
   `}
 `
@@ -103,10 +130,6 @@ export const Testimony = styled(motion.div)`
 
     h4 {
       margin-top: auto;
-
-      ${breakpoint(theme.breakpoints.md)} {
-        margin-top: 0;
-      }
     }
   `}
 `
