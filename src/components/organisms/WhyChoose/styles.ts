@@ -104,9 +104,12 @@ export const StaticsWrapper = styled.ul`
     span {
       font-size: ${theme.fontSize.xxl};
       color: ${theme.colors.greenShades.g_60};
-
-      // Breakpoint Desktop 576px
-      ${breakpoint(theme.breakpoints.sm)} {
+    }
+    // Breakpoint Desktop 576px
+    ${breakpoint(theme.breakpoints.sm)} {
+      display: flex;
+      flex-direction: column;
+      span {
         font-size: ${theme.fontSize.lgmd};
       }
     }
