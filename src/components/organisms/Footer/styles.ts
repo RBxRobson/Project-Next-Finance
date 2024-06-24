@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import { breakpoint } from '../../../styles/themes'
+
 export const Footer = styled.footer`
   ${({ theme }) => css`
     background-color: ${theme.colors.darkShades.d_11};
@@ -37,6 +39,8 @@ export const Logo = styled.div`
 export const Links = styled.ul`
   ${({ theme }) => css`
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 50px;
     gap: 26px;
 
@@ -50,6 +54,7 @@ export const InfosContact = styled.ul`
   ${({ theme }) => css`
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -73,6 +78,7 @@ export const InfosContact = styled.ul`
 
 export const FinalContentWrapper = styled.div`
   ${({ theme }) => css`
+    position: relative;
     width: 100%;
     padding: 16px;
     padding-right: 30px;
@@ -82,6 +88,17 @@ export const FinalContentWrapper = styled.div`
     border-radius: 100px;
     border: 2px solid ${theme.colors.darkShades.d_15};
     background-color: ${theme.colors.darkShades.d_10};
+
+    // Breakpoint Tablet 768px
+    ${breakpoint(theme.breakpoints.md)} {
+      justify-content: center;
+      padding: 26px;
+    }
+
+    // Breakpoint Mobile 576px
+    ${breakpoint(theme.breakpoints.sm)} {
+      border-radius: 20px;
+    }
 
     div {
       a {
@@ -95,6 +112,25 @@ export const FinalContentWrapper = styled.div`
         margin-right: 12px;
       }
     }
+
+    // Breakpoint Mobile 576px
+    ${breakpoint(theme.breakpoints.sm)} {
+      div {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        & > :first-child {
+          border: none;
+          border-bottom: 1px outset ${theme.colors.darkShades.d_70};
+          margin: 0;
+        }
+
+        a {
+          padding: 8px;
+        }
+      }
+    }
   `}
 `
 
@@ -103,6 +139,14 @@ export const SocialLinks = styled.ul`
     display: flex;
     align-items: center;
     gap: 14px;
+
+    // Breakpoint Tablet 768px
+    ${breakpoint(theme.breakpoints.md)} {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
     li {
       position: relative;
