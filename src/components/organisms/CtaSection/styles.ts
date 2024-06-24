@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import { breakpoint } from '../../../styles/themes'
+
 import { Section } from '../../templates/SectionContainer/style'
 
 export const CtaContent = styled(Section)`
@@ -13,6 +15,18 @@ export const CtaContent = styled(Section)`
     border: 2px solid ${theme.colors.darkShades.d_15};
     background-color: ${theme.colors.darkShades.d_11};
 
+    // Breakpoint Tablet 992px
+    ${breakpoint(theme.breakpoints.lg)} {
+      flex-direction: column;
+      padding: 50px;
+    }
+
+    // Breakpoint Mobile 576px
+    ${breakpoint(theme.breakpoints.sm)} {
+      flex-direction: column;
+      padding: 20px;
+    }
+
     img {
       z-index: 1;
       position: absolute;
@@ -23,14 +37,17 @@ export const CtaContent = styled(Section)`
     div {
       z-index: 1;
       max-width: 80%;
+
+      // Breakpoint Tablet 992px
+      ${breakpoint(theme.breakpoints.lg)} {
+        max-width: 100%;
+      }
     }
 
-    h2 {
-      font-weight: 400;
-      font-size: ${theme.fontSize.xl};
-
-      span {
-        font-size: ${theme.fontSize.xl};
+    button {
+      // Breakpoint Tablet 992px
+      ${breakpoint(theme.breakpoints.lg)} {
+        margin-top: 40px;
       }
     }
   `}
