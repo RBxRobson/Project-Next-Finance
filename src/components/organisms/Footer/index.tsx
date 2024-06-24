@@ -75,7 +75,6 @@ const Footer = () => {
               </a>
             </li>
           </S.SocialLinks>
-          <p>Todos os direitos reservados - Next Finance</p>
           <div>
             <a href="#">Política de privacidade</a>
             <a href="#">Termos de serviço</a>
