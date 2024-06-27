@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 
+import * as S from './styles'
+
 type Props = {
   isOpen: boolean
   onClick: () => void
@@ -7,9 +9,7 @@ type Props = {
 
 const HamburgerButton = ({ isOpen = false, onClick }: Props) => {
   const variant = isOpen ? 'opened' : 'closed'
-  const size = 24
-  const color = '#555'
-  const strokeWidth = 1
+  const boxSize = 24
 
   const top = {
     closed: {
@@ -17,8 +17,8 @@ const HamburgerButton = ({ isOpen = false, onClick }: Props) => {
       translateY: 0
     },
     opened: {
-      rotate: 210,
-      translateY: 2
+      rotate: 204,
+      translateY: 3
     }
   }
 
@@ -39,54 +39,30 @@ const HamburgerButton = ({ isOpen = false, onClick }: Props) => {
       translateY: 0
     },
     opened: {
-      rotate: -210,
-      translateY: -2
+      rotate: -204,
+      translateY: -3
     }
   }
 
   const lineProps = {
-    stroke: color,
-    strokeWidth: strokeWidth,
     vectorEffect: 'non-scaling-stroke',
     initial: 'closed',
     animate: variant,
-    transition: { type: 'spring' }
+    transition: { type: 'spring', damping: 16 }
   }
 
   return (
-    <motion.svg
-      viewBox={`0 0 ${size} 10`}
-      overflow="hidden"
+    <S.Svg
+      viewBox={`0 0 ${boxSize} 10`}
       preserveAspectRatio="none"
-      width={size}
-      height={size}
       onClick={onClick}
+      whileTap={{ scale: 1.1 }}
+      whileHover={{ filter: 'brightness(0.9)' }}
     >
-      <motion.line
-        x1="0"
-        x2={size}
-        y1="2"
-        y2="2"
-        variants={top}
-        {...lineProps}
-      />
-      <motion.line
-        x1="0"
-        x2={size}
-        y1="5"
-        y2="5"
-        variants={center}
-        {...lineProps}
-      />
-      <motion.line
-        x1="0"
-        x2={size}
-        y1="8"
-        y2="8"
-        variants={bottom}
-        {...lineProps}
-      />
-    </motion.svg>
+      <motion.line x2="100%" y1="2" y2="2" variants={top} {...lineProps} />
+      <motion.line x2="100%" y1="5" y2="5" variants={center} {...lineProps} />
+      <motion.line x2="100%" y1="8" y2="8" variants={bottom} {...lineProps} />
+    </S.Svg>
   )
 }
 
