@@ -4,18 +4,26 @@ import { css } from 'styled-components'
 
 export const Svg = styled(motion.svg)`
   ${({ theme }) => css`
-    cursor: pointer;
     overflow: hidden;
     outline: none;
-    width: 40px;
-    height: 40px;
-    padding: 8px;
-    border-radius: 8px;
-    background-color: ${theme.colors.greenShades.g_60};
+    width: 28px;
+    height: 28px;
 
     line {
-      stroke: ${theme.colors.darkShades.d_10};
-      stroke-width: 1.5px;
+      stroke: ${theme.colors.greenShades.g_60};
+      stroke-width: 1.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
   `}
+`
+
+export const BtnHamburger = styled(motion.button)`
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  border-radius: 82px;
+  background-color: transparent;
 `

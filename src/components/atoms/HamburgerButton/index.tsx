@@ -18,18 +18,19 @@ const HamburgerButton = ({ isOpen = false, onClick }: Props) => {
     },
     opened: {
       rotate: 204,
-      translateY: 3
+      translateY: 3,
+      scale: 0.7
     }
   }
 
   const center = {
     closed: {
-      opacity: 1,
+      scale: 1,
       rotate: 0,
       translateY: 0
     },
     opened: {
-      opacity: 0
+      scale: 0
     }
   }
 
@@ -40,7 +41,8 @@ const HamburgerButton = ({ isOpen = false, onClick }: Props) => {
     },
     opened: {
       rotate: -204,
-      translateY: -3
+      translateY: -3,
+      scale: 0.7
     }
   }
 
@@ -52,17 +54,17 @@ const HamburgerButton = ({ isOpen = false, onClick }: Props) => {
   }
 
   return (
-    <S.Svg
-      viewBox={`0 0 ${boxSize} 10`}
-      preserveAspectRatio="none"
-      onClick={onClick}
+    <S.BtnHamburger
       whileTap={{ scale: 1.1 }}
       whileHover={{ filter: 'brightness(0.9)' }}
+      onClick={onClick}
     >
-      <motion.line x2="100%" y1="2" y2="2" variants={top} {...lineProps} />
-      <motion.line x2="100%" y1="5" y2="5" variants={center} {...lineProps} />
-      <motion.line x2="100%" y1="8" y2="8" variants={bottom} {...lineProps} />
-    </S.Svg>
+      <S.Svg viewBox={`0 0 ${boxSize} 10`} preserveAspectRatio="none">
+        <motion.line x2="100%" y1="2" y2="2" variants={top} {...lineProps} />
+        <motion.line x2="100%" y1="5" y2="5" variants={center} {...lineProps} />
+        <motion.line x2="100%" y1="8" y2="8" variants={bottom} {...lineProps} />
+      </S.Svg>
+    </S.BtnHamburger>
   )
 }
 
