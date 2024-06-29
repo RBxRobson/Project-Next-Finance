@@ -3,7 +3,7 @@ import {
   FAQ,
   Footer,
   Hero,
-  NavBar,
+  Header,
   OurProducts,
   OurTestimonials,
   WhyChoose
@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <>
-      <NavBar />
+      <Header />
       <Hero heroData={heroData} />
       <OurProducts ourProductsData={ourProductsData} />
       <WhyChoose whyChooseData={whyChooseData} />
