@@ -1,52 +1,56 @@
 import { useState } from 'react'
 
+import themes from '../../../styles/themes'
 import * as S from './styles'
 
 type Page = 'home' | 'joinUs' | 'about' | 'security'
 
 type Props = {
-  type: 'floating' | 'fixed'
+  type: 'desktop' | 'mobile'
 }
 
 const Nav = ({ type }: Props) => {
-  const [pageActive, setPageActive] = useState<Page>('home')
+  const [activePage, setActivePage] = useState<Page>('home')
 
   const handleClick = (page: Page) => {
-    setPageActive(page)
+    setActivePage(page)
   }
 
-  const classActive = type === 'floating' ? 'active' : 'active-secondary'
+  const setClassLink = type === 'mobile' ? 'link-mobile' : ''
+  const setClassNav = type === 'mobile' ? 'nav-mobile' : ''
+
+  const pages: { name: Page; label: string }[] = [
+    { name: 'home', label: 'Home' },
+    { name: 'joinUs', label: 'Trabalhe Conosco' },
+    { name: 'about', label: 'Sobre' },
+    { name: 'security', label: 'Segurança' }
+  ]
+
+  const variants = {
+    activated: {
+      backgroundColor: themes.colors.darkShades.d_15,
+      padding: '12px 24px'
+    },
+    disabled: {
+      backgroundColor: themes.colors.darkShades.d_10
+    }
+  }
 
   return (
-    <S.Nav>
-      <S.Link
-        className={pageActive === 'home' ? classActive : ''}
-        to="/"
-        onClick={() => handleClick('home')}
-      >
-        Home
-      </S.Link>
-      <S.Link
-        className={pageActive === 'joinUs' ? classActive : ''}
-        to="/"
-        onClick={() => handleClick('joinUs')}
-      >
-        Trabalhe Conosco
-      </S.Link>
-      <S.Link
-        className={pageActive === 'about' ? classActive : ''}
-        to="/"
-        onClick={() => handleClick('about')}
-      >
-        Sobre
-      </S.Link>
-      <S.Link
-        className={pageActive === 'security' ? classActive : ''}
-        to="/"
-        onClick={() => handleClick('security')}
-      >
-        Segurança
-      </S.Link>
+    <S.Nav className={setClassNav}>
+      {pages.map((page) => (
+        <S.Link
+          key={page.name}
+          className={setClassLink}
+          to="/"
+          onClick={() => handleClick(page.name)}
+          variants={variants}
+          animate={activePage === page.name ? 'activated' : 'disabled'}
+          transition={{ duration: 0.1 }}
+        >
+          {page.label}
+        </S.Link>
+      ))}
     </S.Nav>
   )
 }

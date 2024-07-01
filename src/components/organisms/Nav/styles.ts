@@ -17,34 +17,30 @@ export const Nav = styled.nav`
 
     &.nav-mobile {
       flex-direction: column;
-      align-items: start;
+      align-items: center;
       padding-top: 40px;
       gap: 16px;
+      width: 100%;
 
       // Breakpoint Mobile 576px
-      ${breakpoint(theme.breakpoints.sm)} {
+      ${breakpoint(theme.breakpoints.md)} {
         align-items: center;
       }
     }
   `}
 `
 
-export const Link = styled(RouterLink)`
+export const Link = styled(motion(RouterLink))`
   ${({ theme }) => css`
     cursor: pointer;
     font-weight: ${theme.fontWeight.regular};
     border-radius: 82px;
     transition: all 300ms;
 
-    &.active {
-      background-color: ${theme.colors.darkShades.d_15};
-      padding: 12px 24px;
-    }
-
-    &.active-secondary {
-      transform: scale(1.1);
-      padding-left: 8px;
-      color: ${theme.colors.greenShades.g_65};
+    &.link-mobile {
+      width: 100%;
+      text-align: center;
+      border-radius: 0;
     }
 
     // Breakpoint Desktops
