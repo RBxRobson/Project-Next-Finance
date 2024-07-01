@@ -3,11 +3,11 @@ import {
   FAQ,
   Footer,
   Hero,
-  Header,
   OurProducts,
   OurTestimonials,
   WhyChoose
 } from '../../components/organisms'
+import Header from '../../components/templates/Header'
 import { useGetHomeQuery } from '../../services/api'
 
 const Home = () => {
