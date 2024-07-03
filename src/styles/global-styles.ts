@@ -7,7 +7,8 @@ import { breakpoint } from './themes'
 const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: lexend;
-    src: url(${lexendFont})
+    src: url(${lexendFont});
+    font-display: swap;
   }
 
   ${({ theme }) => css`
