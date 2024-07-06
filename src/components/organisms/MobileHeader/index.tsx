@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
 
 import themes from '../../../styles/themes'
 import * as S from './styles'
@@ -10,53 +11,44 @@ import Nav from '../Nav'
 
 const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
 
   const variants = {
-    solid: {
-      backgroundColor: 'rgba(25, 25, 25, 1)',
-      boxShadow: `0 8px 10px ${themes.colors.darkShades.d_10}`
+    open: {
+      backgroundColor: themes.colors.darkShades.d_10,
+      height: '100%'
     },
-    blur: {
+    closed: {
       backgroundColor: 'rgba(25, 25, 25, 0)',
-      boxShadow: `none`
+      height: 'auto'
     }
   }
-  const animate = scrolled || isOpen ? 'solid' : 'blur'
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-
-    // Adiciona o event listener
-    window.addEventListener('scroll', handleScroll)
-
-    // Remove o event listener ao desmontar o componente
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  const animate = isOpen ? 'open' : 'closed'
 
   return (
-    <S.MobileHeader variants={variants} animate={animate}>
-      <S.Container className="container">
-        {!isOpen ? (
+    <>
+      <S.HeaderSpacing />
+      <S.MobileHeader variants={variants} animate={animate}>
+        <S.Container className="container">
           <Slogan />
-        ) : (
-          <S.AccessButtons>
-            <Button
-              buttonText="Cadastre-se"
-              type="primary"
-              className="is--deactivated register-btn"
-            />
-            <Button buttonText="Login" type="primary" />
-          </S.AccessButtons>
-        )}
-        <HamburgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
-      </S.Container>
-      {isOpen && <Nav type="mobile" />}
-    </S.MobileHeader>
+          <HamburgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+        </S.Container>
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              <Nav type="mobile" isOpen={isOpen} />
+              <S.AccessButtons>
+                <Button
+                  buttonText="Cadastre-se"
+                  type="primary"
+                  className="is--deactivated"
+                />
+                <Button buttonText="Login" type="primary" />
+              </S.AccessButtons>
+            </>
+          )}
+        </AnimatePresence>
+      </S.MobileHeader>
+    </>
   )
 }
 

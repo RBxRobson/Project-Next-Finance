@@ -10,14 +10,17 @@ export const MobileHeader = styled(motion.header)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 24px 0 24px;
-    position: sticky;
+    position: absolute;
     top: 0;
+    left: 0;
     z-index: 11;
-    margin-bottom: 50px;
-    backdrop-filter: blur(1px);
+    padding: 24px 0 24px;
+    width: 100%;
   `}
+`
+
+export const HeaderSpacing = styled.div`
+  height: 100px;
 `
 
 export const Container = styled.div`
@@ -31,18 +34,17 @@ export const Container = styled.div`
 export const AccessButtons = styled.div`
   ${({ theme }) => css`
     display: flex;
-    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 24px;
+    margin-top: auto;
+    border-top: 1px outset ${theme.colors.darkShades.d_70};
 
     ${ButtonPrimary} {
-      padding: 8px;
       // Breakpoint Desktops 1200px
       ${breakpoint(theme.breakpoints.xl)} {
         font-size: ${theme.fontSize.xxs};
       }
-    }
-
-    .register-btn {
-      padding-left: 0;
     }
   `}
 `
