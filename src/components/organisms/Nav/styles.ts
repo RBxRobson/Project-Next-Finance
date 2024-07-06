@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 
 import { breakpoint } from '../../../styles/themes'
 
-export const Nav = styled.nav`
+export const Nav = styled(motion.nav)`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
@@ -18,9 +18,11 @@ export const Nav = styled.nav`
     &.nav-mobile {
       flex-direction: column;
       align-items: center;
-      padding-top: 40px;
-      gap: 16px;
+      margin-top: 20px;
+      padding-top: 20px;
+      gap: 20px;
       width: 100%;
+      border-top: 1px outset ${theme.colors.darkShades.d_70};
 
       // Breakpoint Mobile 576px
       ${breakpoint(theme.breakpoints.md)} {
