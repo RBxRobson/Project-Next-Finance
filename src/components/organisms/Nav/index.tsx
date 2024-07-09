@@ -7,10 +7,9 @@ type Page = 'home' | 'joinUs' | 'about' | 'security'
 
 type Props = {
   type: 'desktop' | 'mobile'
-  isOpen?: boolean
 }
 
-const Nav = ({ type, isOpen = false }: Props) => {
+const Nav = ({ type }: Props) => {
   const [activePage, setActivePage] = useState<Page>('home')
 
   const handleClick = (page: Page) => {
@@ -27,7 +26,7 @@ const Nav = ({ type, isOpen = false }: Props) => {
     { name: 'security', label: 'Segurança' }
   ]
 
-  const linkVariants = {
+  const linkVariant = {
     activated: {
       backgroundColor: themes.colors.darkShades.d_15,
       padding: '12px 24px'
@@ -37,33 +36,32 @@ const Nav = ({ type, isOpen = false }: Props) => {
     }
   }
 
-  const navVariants = {
+  const navVariant = {
     open: {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 1
+        delay: 0.5,
+        duration: 0.4
       }
     },
     closed: {
       opacity: 0,
-      y: -20
+      y: -100
     }
   }
 
-  const navAnimate = isOpen ? 'open' : 'closed'
-
   return (
-    <S.Nav className={setClassNav} variants={navVariants} animate={navAnimate}>
+    <S.Nav className={setClassNav} variants={navVariant}>
       {pages.map((page) => (
         <S.Link
-          key={page.name}
-          className={setClassLink}
           to="/"
-          onClick={() => handleClick(page.name)}
-          variants={linkVariants}
+          key={page.name}
+          variants={linkVariant}
           animate={activePage === page.name ? 'activated' : 'disabled'}
-          transition={{ duration: 0.1 }}
+          transition={{ duration: 0.2 }}
+          className={setClassLink}
+          onClick={() => handleClick(page.name)}
         >
           {page.label}
         </S.Link>

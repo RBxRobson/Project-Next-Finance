@@ -17,17 +17,8 @@ export const Nav = styled(motion.nav)`
 
     &.nav-mobile {
       flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
       padding-top: 20px;
-      gap: 20px;
-      width: 100%;
       border-top: 1px outset ${theme.colors.darkShades.d_70};
-
-      // Breakpoint Mobile 576px
-      ${breakpoint(theme.breakpoints.md)} {
-        align-items: center;
-      }
     }
   `}
 `
@@ -37,7 +28,6 @@ export const Link = styled(motion(RouterLink))`
     cursor: pointer;
     font-weight: ${theme.fontWeight.regular};
     border-radius: 82px;
-    transition: all 300ms;
 
     &.link-mobile {
       width: 100%;
