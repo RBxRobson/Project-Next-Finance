@@ -1,5 +1,5 @@
-import { AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 import themes from '../../../styles/themes'
 import * as S from './styles'
@@ -12,41 +12,64 @@ import Nav from '../Nav'
 const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const variants = {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('hidden-overflow')
+    } else {
+      document.body.classList.remove('hidden-overflow')
+    }
+  }, [isOpen])
+
+  const wrapperVariant = {
     open: {
-      backgroundColor: themes.colors.darkShades.d_10,
-      height: '100%'
+      y: '0'
     },
     closed: {
-      backgroundColor: 'rgba(25, 25, 25, 0)',
-      height: 'auto'
+      y: '-100%'
     }
   }
+
+  const buttonsVariant = {
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.7,
+        duration: 0.3
+      }
+    },
+    closed: {
+      opacity: 0,
+      y: -100
+    }
+  }
+
   const animate = isOpen ? 'open' : 'closed'
 
   return (
     <>
-      <S.HeaderSpacing />
-      <S.MobileHeader variants={variants} animate={animate}>
-        <S.Container className="container">
+      <S.MobileHeader initial="closed" animate={animate}>
+        <S.HeaderContainer className="container">
           <Slogan />
           <HamburgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
-        </S.Container>
-        <AnimatePresence>
-          {isOpen && (
-            <>
-              <Nav type="mobile" isOpen={isOpen} />
-              <S.AccessButtons>
-                <Button
-                  buttonText="Cadastre-se"
-                  type="primary"
-                  className="is--deactivated"
-                />
-                <Button buttonText="Login" type="primary" />
-              </S.AccessButtons>
-            </>
-          )}
-        </AnimatePresence>
+        </S.HeaderContainer>
+        <S.NavWrapper
+          variants={wrapperVariant}
+          transition={{
+            type: 'easeInOut',
+            duration: 0.5
+          }}
+        >
+          <Nav type="mobile" />
+          <S.AccessButtons variants={buttonsVariant}>
+            <Button
+              buttonText="Cadastre-se"
+              type="primary"
+              className="is--deactivated"
+            />
+            <Button buttonText="Login" type="primary" />
+          </S.AccessButtons>
+        </S.NavWrapper>
       </S.MobileHeader>
     </>
   )
