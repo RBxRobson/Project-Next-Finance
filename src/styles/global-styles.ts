@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
       font-size: ${theme.fontSize.xs};
       font-family: lexend, sans-serif;
       list-style: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -45,6 +46,10 @@ const GlobalStyles = createGlobalStyle`
       max-width: 1600px;
       width: 90%;
       margin: 0 auto;
+    }
+
+    .hidden-overflow {
+      overflow: hidden;
     }
 
     // Estilização do root do swiper
