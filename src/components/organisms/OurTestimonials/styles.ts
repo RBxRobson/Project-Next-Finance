@@ -12,7 +12,7 @@ export const Carousel = styled(motion.div)`
 
     // Breakpoint Desktop 576px
     ${breakpoint(theme.breakpoints.sm)} {
-      padding: 150px 0;
+      padding: 50px 0 140px;
     }
 
     // Estilos do swiper
