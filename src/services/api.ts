@@ -11,9 +11,12 @@ const api = createApi({
   endpoints: (builder) => ({
     getHome: builder.query<Home, void>({
       query: () => 'home'
+    }),
+    getAuth: builder.query<Auth, void>({
+      query: () => 'auth'
     })
   })
 })
 
-export const { useGetHomeQuery } = api
+export const { useGetHomeQuery, useGetAuthQuery } = api
 export default api
