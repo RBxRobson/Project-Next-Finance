@@ -16,10 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": ".",
-    "types": ["@testing-library/jest-dom"],
-    "paths": {
-      "*": ["./src/*"]
-    }
+    "types": ["@testing-library/jest-dom"]
   },
   "include": [
     "src/**/*.ts",
