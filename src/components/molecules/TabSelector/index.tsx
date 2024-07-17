@@ -18,15 +18,15 @@ const TabSelector = ({ firstBtn, secondBtn, position }: Props) => {
   return (
     <S.TabSelectorWrapper>
       <Button
-        type="secondary"
+        type="btn_green--lg"
         buttonText={firstBtn.name}
-        className={position === 'left' ? '' : 'is--deactivated'}
+        className={position === 'left' ? '' : 'btn--disabled'}
         onClick={firstBtn.onClick}
       />
       <Button
-        type="secondary"
+        type="btn_green--lg"
         buttonText={secondBtn.name}
-        className={position === 'right' ? '' : 'is--deactivated'}
+        className={position === 'right' ? '' : 'btn--disabled'}
         onClick={secondBtn.onClick}
       />
     </S.TabSelectorWrapper>
