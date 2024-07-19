@@ -1,8 +1,13 @@
+import { useDispatch } from 'react-redux'
+
 import * as S from './styles'
 
+import { setAuthType } from '../../../redux/reducers/auth'
 import Button from '../../atoms/Button'
 
 const AccessButtons = () => {
+  const dispatch = useDispatch()
+
   const buttonsVariant = {
     open: {
       opacity: 1,
@@ -25,8 +30,14 @@ const AccessButtons = () => {
         type="link_green"
         className="btn__register"
         buttonText="Cadastre-se"
+        onClick={() => dispatch(setAuthType('register'))}
       />
-      <Button link="/auth" type="link_green" buttonText="Login" />
+      <Button
+        link="/auth"
+        type="link_green"
+        buttonText="Login"
+        onClick={() => dispatch(setAuthType('login'))}
+      />
     </S.AccessButtons>
   )
 }
