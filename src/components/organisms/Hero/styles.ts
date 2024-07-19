@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 import { breakpoint } from '../../../styles/themes'
 
-import { ButtonPrimary } from '../../atoms/Button/style'
+import { BtnGreen } from '../../atoms/Button/style'
 import { Section } from '../../templates/SectionContainer/style'
 
 export const HeroContent = styled(Section)`
@@ -37,21 +37,22 @@ export const HeroTitleWrapper = styled.div`
       padding-bottom: 50px;
     }
 
-    // Breakpoint Tablets
+    // Breakpoint Tablet
     ${breakpoint(theme.breakpoints.lg)} {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      max-width: 100%;
 
-      ${ButtonPrimary} {
-        width: 50%;
+      ${BtnGreen} {
+        width: 100%;
         max-width: 460px;
       }
     }
 
     ${breakpoint(theme.breakpoints.sm)} {
-      ${ButtonPrimary} {
+      ${BtnGreen} {
         width: 80%;
       }
     }
