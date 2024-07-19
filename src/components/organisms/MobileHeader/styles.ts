@@ -1,10 +1,6 @@
 import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
-import { breakpoint } from '../../../styles/themes'
-
-import { ButtonPrimary } from '../../atoms/Button/style'
-
 export const MobileHeader = styled(motion.header)`
   display: flex;
   margin-bottom: 24px;
@@ -32,21 +28,5 @@ export const NavWrapper = styled(motion.div)`
     width: 100%;
     padding-top: 84px;
     background-color: ${theme.colors.darkShades.d_10};
-  `}
-`
-
-export const AccessButtons = styled(motion.div)`
-  ${({ theme }) => css`
-    display: flex;
-    justify-content: center;
-    padding: 24px 0;
-    border-top: 1px outset ${theme.colors.darkShades.d_70};
-
-    ${ButtonPrimary} {
-      // Breakpoint Desktops 1200px
-      ${breakpoint(theme.breakpoints.xl)} {
-        font-size: ${theme.fontSize.xxs};
-      }
-    }
   `}
 `

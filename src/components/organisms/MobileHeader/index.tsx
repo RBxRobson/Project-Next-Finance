@@ -1,11 +1,9 @@
-import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-import themes from '../../../styles/themes'
 import * as S from './styles'
 
-import Button from '../../atoms/Button'
 import HamburgerButton from '../../atoms/HamburgerButton'
+import AccessButtons from '../../molecules/AccessButtons'
 import Slogan from '../../molecules/Slogan'
 import Nav from '../Nav'
 
@@ -29,21 +27,6 @@ const MobileHeader = () => {
     }
   }
 
-  const buttonsVariant = {
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.7,
-        duration: 0.3
-      }
-    },
-    closed: {
-      opacity: 0,
-      y: -100
-    }
-  }
-
   const animate = isOpen ? 'open' : 'closed'
 
   return (
@@ -61,14 +44,7 @@ const MobileHeader = () => {
           }}
         >
           <Nav type="mobile" />
-          <S.AccessButtons variants={buttonsVariant}>
-            <Button
-              buttonText="Cadastre-se"
-              type="primary"
-              className="is--deactivated"
-            />
-            <Button buttonText="Login" type="primary" />
-          </S.AccessButtons>
+          <AccessButtons />
         </S.NavWrapper>
       </S.MobileHeader>
     </>
