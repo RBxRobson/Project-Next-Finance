@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
-import { ButtonPrimary } from '../../atoms/Button/style'
+import { BtnGreen } from '../../atoms/Button/style'
 
 export const Form = styled.form`
   display: ruby;
@@ -10,24 +11,45 @@ export const InputsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   width: 100%;
+`
+
+export const InputController = styled.div`
+  position: relative;
+`
+
+export const BtnShowPassword = styled(motion.button)`
+  cursor: pointer;
+  border: none;
+  background: transparent;
+
+  img {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    filter: brightness(0.38);
+  }
 `
 
 export const Input = styled.input`
   ${({ theme }) => css`
     background-color: ${theme.colors.darkShades.d_10};
-    border: 1px solid ${theme.colors.darkShades.d_15};
+    border: 2px solid ${theme.colors.darkShades.d_35};
+    outline: none;
     border-radius: 88px;
-    padding: 16px;
-    padding-left: 20px;
+    padding: 16px 20px;
+    width: 100%;
 
     &::placeholder {
       color: ${theme.colors.darkShades.d_35};
     }
 
     &:focus {
-      outline: 1px solid ${theme.colors.greenShades.g_60};
+      border: 2px solid ${theme.colors.greenShades.g_65};
     }
   `}
 `
@@ -37,7 +59,7 @@ export const ButtonsWrapper = styled.div`
   max-width: 500px;
 `
 
-export const FormConfirmBtn = styled(ButtonPrimary)`
+export const FormConfirmBtn = styled(BtnGreen)`
   width: 100%;
 `
 
