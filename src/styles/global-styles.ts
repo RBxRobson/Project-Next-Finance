@@ -27,8 +27,7 @@ const GlobalStyles = createGlobalStyle`
       background-color: ${theme.colors.darkShades.d_10};
       background-image: url(${abstract_svg});
       background-repeat: no-repeat;
-      background-position: 0 -70px;
-      background-size: 800px 700px;
+      background-size: 35%;
       background-blend-mode: hard-light;
     }
 
@@ -57,14 +56,25 @@ const GlobalStyles = createGlobalStyle`
       --swiper-theme-color: ${theme.colors.greenShades.g_60};
     }
 
-    // Breakpoint Desktops
+    // Breakpoint Desktops 1200px
     ${breakpoint(theme.breakpoints.xl)} {
+      body {
+        background-size: 60%;
+      }
+
       .container {
         width: 95%;
       }
     }
 
-    // Breakpoint Mobile
+    // Breakpoint Mobile 768px
+    ${breakpoint(theme.breakpoints.md)} {
+      body {
+        background-size: 80%;
+      }
+    }
+
+    // Breakpoint Mobile 576px
     ${breakpoint(theme.breakpoints.sm)} {
       * {
         font-size: ${theme.fontSize.xxs};
