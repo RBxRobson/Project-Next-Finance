@@ -1,9 +1,14 @@
+import { useDispatch } from 'react-redux'
+
 import * as S from './styles'
 
 import { radialDesignRight } from '../../../assets/images'
+import { setAuthType } from '../../../redux/reducers/auth'
 import Button from '../../atoms/Button'
 
 const CtaSection = () => {
+  const dispatch = useDispatch()
+
   return (
     <S.CtaContent className="container">
       <img src={radialDesignRight} />
@@ -19,7 +24,12 @@ const CtaSection = () => {
           qualidade.
         </p>
       </div>
-      <Button buttonText="Abra sua conta" type="primary" />
+      <Button
+        buttonText="Abra sua conta"
+        type="link_green"
+        link="/auth"
+        onClick={() => setAuthType('register')}
+      />
     </S.CtaContent>
   )
 }
