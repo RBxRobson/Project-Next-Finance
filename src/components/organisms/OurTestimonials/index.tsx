@@ -83,9 +83,9 @@ const OurTestimonials = ({ ourTestimonialsData }: Props) => {
               <AnimatePresence mode="wait">
                 <S.Testimony
                   key={position}
-                  initial={{ opacity: 0, height: 'calc(100% - 200px)' }}
-                  animate={{ opacity: 1, height: '100%' }}
-                  exit={{ opacity: 0, height: 'calc(100% - 200px)' }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{
                     duration: 0.8
                   }}

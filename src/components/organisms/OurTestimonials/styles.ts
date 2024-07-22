@@ -126,6 +126,7 @@ export const Testimony = styled(motion.div)`
     flex-direction: column;
     text-align: center;
     height: 100%;
+    min-height: 330px;
     gap: 50px;
 
     h4 {
