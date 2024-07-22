@@ -28,7 +28,7 @@ const CtaSection = () => {
         buttonText="Abra sua conta"
         type="link_green"
         link="/auth"
-        onClick={() => setAuthType('register')}
+        onClick={() => dispatch(setAuthType('register'))}
       />
     </S.CtaContent>
   )
