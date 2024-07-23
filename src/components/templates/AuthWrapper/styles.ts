@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { Link as RouterLink } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 
+import { breakpoint } from '../../../styles/themes'
+
 import { background } from '../../../assets/images'
 
 export const Background = styled.div`
@@ -13,6 +15,7 @@ export const Background = styled.div`
     background-color: ${theme.colors.darkShades.d_15};
     min-width: 100vw;
     min-height: 100vh;
+    padding-top: 100px;
 
     &::before {
       content: '';
@@ -38,6 +41,11 @@ export const Background = styled.div`
       top: 0;
       right: 0;
       width: 250px;
+
+      // Breakpoint Mobile 576px
+      ${breakpoint(theme.breakpoints.sm)} {
+        width: 180px;
+      }
     }
   `}
 `
@@ -52,6 +60,11 @@ export const Title = styled.h2`
     font-size: ${theme.fontSize.xl};
     font-weight: ${theme.fontWeight.medium};
     margin-bottom: 20px;
+
+    // Breakpoint Mobile 576px
+    ${breakpoint(theme.breakpoints.sm)} {
+      font-size: ${theme.fontSize.lgmd};
+    }
   `}
 `
 
