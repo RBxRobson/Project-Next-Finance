@@ -10,10 +10,18 @@ import Nav from '../Nav'
 const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false)
 
+  const onClickButton = () => {
+    setIsOpen(!isOpen)
+  }
+
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('hidden-overflow')
     } else {
+      document.body.classList.remove('hidden-overflow')
+    }
+
+    return () => {
       document.body.classList.remove('hidden-overflow')
     }
   }, [isOpen])
@@ -34,7 +42,7 @@ const MobileHeader = () => {
       <S.MobileHeader initial="closed" animate={animate}>
         <S.HeaderContainer className="container">
           <Slogan />
-          <HamburgerButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+          <HamburgerButton isOpen={isOpen} onClick={onClickButton} />
         </S.HeaderContainer>
         <S.NavWrapper
           variants={wrapperVariant}
