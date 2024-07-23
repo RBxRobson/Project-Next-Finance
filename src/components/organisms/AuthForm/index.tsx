@@ -21,7 +21,6 @@ const AuthForm = ({ authContent }: Props) => {
 
   const { form_register: formRegister, form_login: formLogin } = authContent
   const formInfos = authType === 'login' ? formLogin : formRegister
-  const setGrid = formInfos.inputs.length > 2 ? '1fr 1fr' : '1fr'
 
   const [showPassword, setShowPassword] = useState(false)
   const getPasswordFieldProps = (visibleProp: string, hiddenProp: string) => {
@@ -66,13 +65,7 @@ const AuthForm = ({ authContent }: Props) => {
 
   return (
     <S.Form action="">
-      <S.InputsWrapper
-        style={{
-          gridTemplateColumns: setGrid
-        }}
-      >
-        {setInputs()}
-      </S.InputsWrapper>
+      <S.InputsWrapper $authType={authType}>{setInputs()}</S.InputsWrapper>
       <S.ButtonsWrapper>
         <S.FormConfirmBtn type="submit">
           {formInfos.button_confirm}

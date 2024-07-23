@@ -1,22 +1,34 @@
 import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
+import { breakpoint } from '../../../styles/themes'
+
 import { BtnGreen } from '../../atoms/Button/style'
 
 export const Form = styled.form`
   display: ruby;
 `
 
-export const InputsWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-bottom: 50px;
-  width: 100%;
+export const InputsWrapper = styled.div<{ $authType: string }>`
+  ${({ $authType, theme }) => css`
+    display: grid;
+    grid-template-columns: ${$authType === 'register' ? '1fr 1fr' : '1fr'};
+    gap: 30px;
+    margin-bottom: 50px;
+    width: 100%;
+
+    // Breakpoint Mobile 576px
+    ${breakpoint(theme.breakpoints.sm)} {
+      grid-template-columns: 1fr;
+    }
+  `}
 `
 
 export const InputController = styled.div`
   position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
 `
 
 export const BtnShowPassword = styled(motion.button)`
@@ -43,6 +55,7 @@ export const Input = styled.input`
     border-radius: 88px;
     padding: 16px 20px;
     width: 100%;
+    transition: all 300ms ease-in-out;
 
     &::placeholder {
       color: ${theme.colors.darkShades.d_35};
@@ -56,11 +69,11 @@ export const Input = styled.input`
 
 export const ButtonsWrapper = styled.div`
   width: 100%;
-  max-width: 500px;
 `
 
 export const FormConfirmBtn = styled(BtnGreen)`
   width: 100%;
+  max-width: 490px;
 `
 
 export const BtnChangeAuth = styled(FormConfirmBtn)`
@@ -76,7 +89,8 @@ export const Divider = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
-    margin: 24px 0;
+    max-width: 520px;
+    margin: 24px auto;
 
     p {
       padding: 0 16px;
