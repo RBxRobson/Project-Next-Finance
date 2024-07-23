@@ -10,7 +10,7 @@ export const Carousel = styled(motion.div)`
     position: relative;
     padding: 50px 80px;
 
-    // Breakpoint Desktop 576px
+    // Breakpoint Mobile 576px
     ${breakpoint(theme.breakpoints.sm)} {
       padding: 50px 0 140px;
     }
@@ -131,6 +131,11 @@ export const Testimony = styled(motion.div)`
 
     h4 {
       margin-top: auto;
+    }
+
+    // Breakpoint Mobile 576px
+    ${breakpoint(theme.breakpoints.sm)} {
+      min-height: 300px;
     }
   `}
 `
