@@ -42,12 +42,10 @@ export const CtaContent = styled(Section)`
       ${breakpoint(theme.breakpoints.lg)} {
         max-width: 100%;
       }
-    }
 
-    button {
-      // Breakpoint Tablet 992px
-      ${breakpoint(theme.breakpoints.lg)} {
-        margin-top: 40px;
+      // Breakpoint Mobile 576px
+      ${breakpoint(theme.breakpoints.sm)} {
+        margin-bottom: 20px;
       }
     }
   `}
