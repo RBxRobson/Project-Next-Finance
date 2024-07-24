@@ -1,13 +1,11 @@
 import {
   CtaSection,
   FAQ,
-  Footer,
   Hero,
   OurProducts,
   OurTestimonials,
   WhyChoose
 } from '../../components/organisms'
-import Header from '../../components/templates/Header'
 import { useGetHomeQuery } from '../../services/api'
 
 const Home = () => {
@@ -27,14 +25,12 @@ const Home = () => {
 
   return (
     <>
-      <Header />
       <Hero heroData={heroData} />
       <OurProducts ourProductsData={ourProductsData} />
       <WhyChoose whyChooseData={whyChooseData} />
       <OurTestimonials ourTestimonialsData={ourTestimonialsData} />
       <FAQ faqData={faqData} />
       <CtaSection />
-      <Footer />
     </>
   )
 }
