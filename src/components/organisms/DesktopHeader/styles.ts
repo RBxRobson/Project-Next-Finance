@@ -12,7 +12,7 @@ export const DesktopHeader = styled(motion.header)`
     padding: 20px 34px;
 
     &.container {
-      margin: 50px auto 150px;
+      margin: 50px auto 80px;
     }
   `}
 `
