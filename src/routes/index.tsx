@@ -3,6 +3,7 @@ import { Route, Routes as RouterRoutes } from 'react-router-dom'
 import { Footer } from '../components/organisms'
 import Header from '../components/templates/Header'
 import Auth from '../pages/Auth'
+import Careers from '../pages/Careers'
 import Home from '../pages/Home'
 
 type LayoutProps = {
@@ -28,7 +29,7 @@ const Routes = () => {
           <Layout>
             <RouterRoutes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<Auth />} />
+              <Route path="/joinUs" element={<Careers />} />
             </RouterRoutes>
           </Layout>
         }
