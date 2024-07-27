@@ -55,7 +55,7 @@ const Nav = ({ type }: Props) => {
     <S.Nav className={setClassNav} variants={navVariant}>
       {pages.map((page) => (
         <S.Link
-          to="/"
+          to={page.name === 'home' ? '/' : page.name}
           key={page.name}
           variants={linkVariant}
           animate={activePage === page.name ? 'activated' : 'disabled'}
