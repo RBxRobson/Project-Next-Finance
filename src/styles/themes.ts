@@ -16,14 +16,10 @@ export default {
       d_10: '#191919',
       d_11: '#1C1C1C',
       d_15: '#262626',
+      d_30: '#4C4C4D',
       d_35: '#59595a',
       d_70: '#b3b3b3'
     }
-  },
-  spacings: {
-    small: '1rem',
-    medium: '2rem',
-    large: '3rem'
   },
   fontWeight: {
     light: 300,
