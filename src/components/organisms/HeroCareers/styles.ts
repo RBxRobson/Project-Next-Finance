@@ -5,10 +5,11 @@ import { breakpoint } from '../../../styles/themes'
 export const Hero = styled.section`
   ${({ theme }) => css`
     position: relative;
-    padding: 50px;
-    background-color: ${theme.colors.darkShades.d_11};
     border-radius: 20px;
+    padding: 50px;
+    margin-bottom: 150px;
     z-index: 1;
+    background-color: ${theme.colors.darkShades.d_11};
 
     // Breakpoint Desktop 1200px
     ${breakpoint(theme.breakpoints.xl)} {
