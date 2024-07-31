@@ -12,7 +12,7 @@ export const ValuesList = styled.ul`
     // Breakpoint Desktop 992px
     ${breakpoint(theme.breakpoints.lg)} {
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 50px;
     }
   `}
 `
@@ -27,14 +27,7 @@ export const Cards = styled.li`
       width: 100%;
       max-width: 660px;
       margin: 0 auto;
-      padding: 0 60px 24px;
-      border: none;
-      border-bottom: 1px solid ${theme.colors.greenShades.g_60};
-    }
-
-    // Breakpoint Desktop 576px
-    ${breakpoint(theme.breakpoints.sm)} {
-      padding: 0 0 24px;
+      text-align: start;
     }
 
     h3 {
