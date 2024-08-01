@@ -19,6 +19,7 @@ export const Hero = styled.section`
     // Breakpoint Tablet 992px
     ${breakpoint(theme.breakpoints.lg)} {
       padding: 40px;
+      margin-bottom: 80px;
     }
 
     // Breakpoint Mobile 576px

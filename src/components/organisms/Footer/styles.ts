@@ -8,6 +8,11 @@ export const Footer = styled.footer`
     padding: 100px 0 50px;
     margin-top: 150px;
 
+    // Breakpoint Tablet 992px
+    ${breakpoint(theme.breakpoints.lg)} {
+      margin-top: 80px;
+    }
+
     & > div {
       margin: 0 auto;
       display: flex;

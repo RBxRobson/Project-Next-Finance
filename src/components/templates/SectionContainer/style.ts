@@ -31,6 +31,7 @@ export const Section = styled.section`
     // Breakpoint Tablet 992px
     ${breakpoint(theme.breakpoints.lg)} {
       text-align: center;
+      padding-bottom: 80px;
     }
 
     // Breakpoint Mobile 576px

@@ -41,11 +41,7 @@ export const CtaContent = styled(Section)`
       // Breakpoint Tablet 992px
       ${breakpoint(theme.breakpoints.lg)} {
         max-width: 100%;
-      }
-
-      // Breakpoint Mobile 576px
-      ${breakpoint(theme.breakpoints.sm)} {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
       }
     }
   `}
