@@ -1,4 +1,9 @@
-import { HeroCareers, OurBenefits, OurValues } from '../../components/organisms'
+import {
+  CtaSection,
+  HeroCareers,
+  OurBenefits,
+  OurValues
+} from '../../components/organisms'
 import { useGetCareersQuery } from '../../services/api'
 
 const Home = () => {
@@ -19,6 +24,7 @@ const Home = () => {
       <HeroCareers heroData={heroData} />
       <OurValues ourValuesData={ourValuesData} />
       <OurBenefits benefitsData={benefitsData} />
+      <CtaSection />
     </>
   )
 }
