@@ -2,7 +2,8 @@ import {
   CtaSection,
   HeroCareers,
   OurBenefits,
-  OurValues
+  OurValues,
+  JobOpenings
 } from '../../components/organisms'
 import { useGetCareersQuery } from '../../services/api'
 
@@ -16,7 +17,8 @@ const Home = () => {
   const {
     hero: heroData,
     our_values: ourValuesData,
-    our_benefits: benefitsData
+    our_benefits: benefitsData,
+    job_openings: jobOpeningsData
   } = careers
 
   return (
@@ -24,6 +26,7 @@ const Home = () => {
       <HeroCareers heroData={heroData} />
       <OurValues ourValuesData={ourValuesData} />
       <OurBenefits benefitsData={benefitsData} />
+      <JobOpenings jobOpeningsData={jobOpeningsData} />
       <CtaSection />
     </>
   )
