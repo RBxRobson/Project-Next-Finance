@@ -1,7 +1,10 @@
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import themes from '../../../styles/themes'
 import * as S from './styles'
+
+import { setIsOpen } from '../../../redux/reducers/navMobile'
 
 type Page = 'home' | 'joinUs' | 'about' | 'security'
 
@@ -11,9 +14,11 @@ type Props = {
 
 const Nav = ({ type }: Props) => {
   const [activePage, setActivePage] = useState<Page>('home')
+  const dispatch = useDispatch()
 
   const handleClick = (page: Page) => {
     setActivePage(page)
+    dispatch(setIsOpen())
   }
 
   const setClassLink = type === 'mobile' ? 'link-mobile' : ''

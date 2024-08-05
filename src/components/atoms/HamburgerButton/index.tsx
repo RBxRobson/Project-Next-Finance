@@ -1,13 +1,19 @@
 import { motion } from 'framer-motion'
+import { useDispatch, useSelector } from 'react-redux'
 
 import * as S from './styles'
 
-type Props = {
-  isOpen: boolean
-  onClick: () => void
-}
+import { RootReducer } from '../../../redux'
+import { setIsOpen } from '../../../redux/reducers/navMobile'
 
-const HamburgerButton = ({ isOpen = false, onClick }: Props) => {
+const HamburgerButton = () => {
+  const { isOpen } = useSelector((state: RootReducer) => state.navMobile)
+  const dispatch = useDispatch()
+
+  const onClickButton = () => {
+    dispatch(setIsOpen())
+  }
+
   const variant = isOpen ? 'opened' : 'closed'
   const boxSize = 24
 
@@ -57,7 +63,7 @@ const HamburgerButton = ({ isOpen = false, onClick }: Props) => {
     <S.BtnHamburger
       whileTap={{ scale: 1.1 }}
       whileHover={{ filter: 'brightness(0.9)' }}
-      onClick={onClick}
+      onClick={onClickButton}
     >
       <S.Svg viewBox={`0 0 ${boxSize} 10`} preserveAspectRatio="none">
         <motion.line x2="100%" y1="2" y2="2" variants={top} {...lineProps} />

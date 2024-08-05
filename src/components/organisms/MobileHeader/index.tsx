@@ -1,18 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 import * as S from './styles'
 
+import { RootReducer } from '../../../redux'
 import HamburgerButton from '../../atoms/HamburgerButton'
 import AccessButtons from '../../molecules/AccessButtons'
 import Slogan from '../../molecules/Slogan'
 import Nav from '../Nav'
 
 const MobileHeader = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const onClickButton = () => {
-    setIsOpen(!isOpen)
-  }
+  const { isOpen } = useSelector((state: RootReducer) => state.navMobile)
 
   useEffect(() => {
     if (isOpen) {
@@ -42,7 +40,7 @@ const MobileHeader = () => {
       <S.MobileHeader initial="closed" animate={animate}>
         <S.HeaderContainer className="container">
           <Slogan />
-          <HamburgerButton isOpen={isOpen} onClick={onClickButton} />
+          <HamburgerButton />
         </S.HeaderContainer>
         <S.NavWrapper
           variants={wrapperVariant}
