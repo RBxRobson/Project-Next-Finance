@@ -10,7 +10,7 @@ type Props = {
 const JobOpenings = ({ jobOpeningsData }: Props) => {
   return (
     <SectionContainer
-      titleSection={{ title: 'Vagas', markText: 'Disponíveis' }}
+      titleSection={{ title: 'Vagas', markText: ' Disponíveis' }}
       descriptionSection={jobOpeningsData.description}
     >
       <S.Vacancies>
