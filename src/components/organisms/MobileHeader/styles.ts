@@ -7,7 +7,7 @@ export const MobileHeader = styled(motion.header)`
 `
 
 export const HeaderContainer = styled.div`
-  z-index: 2;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,7 +16,7 @@ export const HeaderContainer = styled.div`
 
 export const NavWrapper = styled(motion.div)`
   ${({ theme }) => css`
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
