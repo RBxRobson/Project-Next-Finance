@@ -72,7 +72,6 @@ export const HeroText = styled.div`
     top: 50px;
     display: flex;
     flex-direction: column;
-    gap: 23px;
     width: 100%;
     max-width: 800px;
     padding: 80px;
@@ -83,7 +82,6 @@ export const HeroText = styled.div`
     ${breakpoint(theme.breakpoints.xxl)} {
       max-width: 600px;
       padding: 40px;
-      text-align: center;
     }
 
     // Breakpoint Desktop 1200px
@@ -93,6 +91,7 @@ export const HeroText = styled.div`
       max-width: 100%;
       border-radius: 40px;
       margin-top: -200px;
+      text-align: center;
     }
 
     // Breakpoint Tablet 768px
@@ -102,9 +101,16 @@ export const HeroText = styled.div`
       border-radius: 40px 40px 18px 18px;
     }
 
+    h4 {
+      font-size: 20px;
+      font-weight: ${theme.fontWeight.regular};
+      margin-bottom: 6px;
+    }
+
     h2 {
       font-size: ${theme.fontSize.xxl};
       font-weight: ${theme.fontWeight.medium};
+      margin-bottom: 23px;
 
       span {
         color: ${theme.colors.greenShades.g_60};
