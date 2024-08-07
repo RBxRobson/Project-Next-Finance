@@ -13,9 +13,17 @@ const api = createApi({
     }),
     getCareers: builder.query<Careers, void>({
       query: () => 'careers'
+    }),
+    getAbout: builder.query<About, void>({
+      query: () => 'about'
     })
   })
 })
 
-export const { useGetHomeQuery, useGetAuthQuery, useGetCareersQuery } = api
+export const {
+  useGetHomeQuery,
+  useGetAuthQuery,
+  useGetCareersQuery,
+  useGetAboutQuery
+} = api
 export default api
