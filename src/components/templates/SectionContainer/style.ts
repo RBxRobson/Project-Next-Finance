@@ -4,7 +4,9 @@ import { breakpoint } from '../../../styles/themes'
 
 export const Section = styled.section`
   ${({ theme }) => css`
-    padding-bottom: 150px;
+    &.container {
+      margin-bottom: 150px;
+    }
 
     h2 {
       margin-bottom: 14px;
@@ -15,6 +17,10 @@ export const Section = styled.section`
         color: ${theme.colors.greenShades.g_60};
         font-size: ${theme.fontSize.xxl};
       }
+    }
+
+    & > p {
+      margin-bottom: 80px;
     }
 
     // Breakpoint Desktop 1200px
@@ -31,7 +37,14 @@ export const Section = styled.section`
     // Breakpoint Tablet 992px
     ${breakpoint(theme.breakpoints.lg)} {
       text-align: center;
-      padding-bottom: 80px;
+
+      &.container {
+        margin-bottom: 80px;
+      }
+
+      & > p {
+        margin-bottom: 40px;
+      }
     }
 
     // Breakpoint Mobile 576px
