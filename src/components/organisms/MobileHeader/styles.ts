@@ -1,9 +1,23 @@
 import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
+import { breakpoint } from '../../../styles/themes'
+
 export const MobileHeader = styled(motion.header)`
-  display: flex;
-  margin-bottom: 24px;
+  ${({ theme }) => css`
+    display: flex;
+    margin-bottom: 50px;
+
+    // Breakpoint Desktop 768px
+    ${breakpoint(theme.breakpoints.md)} {
+      margin-bottom: 36px;
+    }
+
+    // Breakpoint Desktop 576px
+    ${breakpoint(theme.breakpoints.sm)} {
+      margin-bottom: 24px;
+    }
+  `}
 `
 
 export const HeaderContainer = styled.div`
