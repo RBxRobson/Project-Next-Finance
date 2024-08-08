@@ -1,5 +1,6 @@
 import abstractDesign from './abstract_design_1.svg'
 import abstractDesignHero from './abstract_design_hero.svg'
+import backgroundBanner from './background_banner.svg'
 import bankLogo from './bank_logo.svg'
 import radialDesignLeft from './design_radius_lf.svg'
 import radialDesignRight from './design_radius_right.svg'
@@ -37,5 +38,6 @@ export {
   abstractDesign,
   iconApple,
   iconGoogle,
-  iconRadialFacebook
+  iconRadialFacebook,
+  backgroundBanner
 }
