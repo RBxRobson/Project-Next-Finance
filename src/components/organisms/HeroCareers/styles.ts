@@ -7,9 +7,12 @@ export const Hero = styled.section`
     position: relative;
     border-radius: 20px;
     padding: 50px;
-    margin-bottom: 150px;
     z-index: 1;
     background-color: ${theme.colors.darkShades.d_11};
+
+    &.container {
+      margin-bottom: 150px;
+    }
 
     // Breakpoint Desktop 1200px
     ${breakpoint(theme.breakpoints.xl)} {
@@ -19,7 +22,10 @@ export const Hero = styled.section`
     // Breakpoint Tablet 992px
     ${breakpoint(theme.breakpoints.lg)} {
       padding: 40px;
-      margin-bottom: 80px;
+
+      &.container {
+        margin-bottom: 80px;
+      }
     }
 
     // Breakpoint Mobile 576px
