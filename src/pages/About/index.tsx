@@ -1,4 +1,4 @@
-import { HeroAbout } from '../../components/organisms'
+import { HeroAbout, MissionVision } from '../../components/organisms'
 import { useGetAboutQuery } from '../../services/api'
 
 const Auth = () => {
@@ -14,7 +14,12 @@ const Auth = () => {
     press_releases: pressReleasesData
   } = about
 
-  return <HeroAbout heroData={heroData} />
+  return (
+    <>
+      <HeroAbout heroData={heroData} />
+      <MissionVision missionVisionData={missionData} />
+    </>
+  )
 }
 
 export default Auth
