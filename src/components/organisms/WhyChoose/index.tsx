@@ -48,7 +48,7 @@ const WhyChoose = ({ whyChooseData }: Props) => {
             </S.StaticsWrapper>
           </S.DescriptionContainer>
         </S.WhyChooseArticle>
-        <S.WhyChooseArticle>
+        <S.WhyChooseArticle style={{ marginTop: 80 }}>
           <S.DescriptionContainer>
             <h4>Empresas</h4>
             <p>{forBusinessesDescription}</p>

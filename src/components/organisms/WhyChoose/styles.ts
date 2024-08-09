@@ -7,14 +7,13 @@ export const WhyChooseArticle = styled.article`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 100px;
-    padding-top: 80px;
 
     // Breakpoint Desktop 1200px
     ${breakpoint(theme.breakpoints.xl)} {
       display: flex;
       flex-direction: column;
       text-align: center;
-      gap: 0px;
+      gap: 0;
 
       &.column-reverse {
         flex-direction: column-reverse;
