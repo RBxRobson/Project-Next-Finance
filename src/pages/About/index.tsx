@@ -1,7 +1,12 @@
-import { HeroAbout, MissionVision } from '../../components/organisms'
+import {
+  CtaSection,
+  HeroAbout,
+  MissionVision,
+  PressReleases
+} from '../../components/organisms'
 import { useGetAboutQuery } from '../../services/api'
 
-const Auth = () => {
+const About = () => {
   const { data: about } = useGetAboutQuery()
 
   if (!about) {
@@ -18,8 +23,10 @@ const Auth = () => {
     <>
       <HeroAbout heroData={heroData} />
       <MissionVision missionVisionData={missionData} />
+      <PressReleases pressReleasesData={pressReleasesData} />
+      <CtaSection />
     </>
   )
 }
 
-export default Auth
+export default About
