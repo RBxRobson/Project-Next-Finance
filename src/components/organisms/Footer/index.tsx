@@ -12,14 +12,23 @@ import {
   twitterIcon
 } from '../../../assets/images'
 
-const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  })
-}
+type Page = 'home' | 'joinUs' | 'about' | 'security'
 
 const Footer = () => {
+  const pages: { name: Page; label: string }[] = [
+    { name: 'home', label: 'Home' },
+    { name: 'joinUs', label: 'Trabalhe Conosco' },
+    { name: 'about', label: 'Sobre' },
+    { name: 'security', label: 'Segurança' }
+  ]
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <S.Footer>
       <div className="container">
@@ -28,20 +37,16 @@ const Footer = () => {
           <h1>Next Finance</h1>
         </S.Logo>
         <S.Links>
-          <li>
-            <Link to="/" onClick={scrollToTop}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <a href="#">Trabalhe conosco</a>
-          </li>
-          <li>
-            <a href="#">Sobre</a>
-          </li>
-          <li>
-            <a href="#">Segurança</a>
-          </li>
+          {pages.map((page) => (
+            <li key={page.name}>
+              <Link
+                to={page.name === 'home' ? '/' : page.name}
+                onClick={scrollToTop}
+              >
+                {page.label}
+              </Link>
+            </li>
+          ))}
         </S.Links>
         <S.InfosContact>
           <li>
