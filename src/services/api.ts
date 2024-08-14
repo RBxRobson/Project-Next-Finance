@@ -16,6 +16,9 @@ const api = createApi({
     }),
     getAbout: builder.query<About, void>({
       query: () => 'about'
+    }),
+    getSecurity: builder.query<Security, void>({
+      query: () => 'security'
     })
   })
 })
@@ -24,6 +27,7 @@ export const {
   useGetHomeQuery,
   useGetAuthQuery,
   useGetCareersQuery,
-  useGetAboutQuery
+  useGetAboutQuery,
+  useGetSecurityQuery
 } = api
 export default api
