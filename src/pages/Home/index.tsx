@@ -30,7 +30,6 @@ const Home = () => {
       <WhyChoose whyChooseData={whyChooseData} />
       <OurTestimonials ourTestimonialsData={ourTestimonialsData} />
       <FAQ faqData={faqData} />
-      <CtaSection />
     </>
   )
 }

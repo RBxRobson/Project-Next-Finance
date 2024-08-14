@@ -27,7 +27,6 @@ const Home = () => {
       <OurValues ourValuesData={ourValuesData} />
       <OurBenefits benefitsData={benefitsData} />
       <JobOpenings jobOpeningsData={jobOpeningsData} />
-      <CtaSection />
     </>
   )
 }

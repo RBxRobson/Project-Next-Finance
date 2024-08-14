@@ -24,7 +24,6 @@ const About = () => {
       <HeroAbout heroData={heroData} />
       <MissionVision missionVisionData={missionData} />
       <PressReleases pressReleasesData={pressReleasesData} />
-      <CtaSection />
     </>
   )
 }
