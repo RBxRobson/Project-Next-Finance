@@ -1,11 +1,8 @@
 import { Route, Routes as RouterRoutes } from 'react-router-dom'
 
-import { Footer } from '../components/organisms'
+import { CtaSection, Footer } from '../components/organisms'
 import Header from '../components/templates/Header'
-import About from '../pages/About'
-import Auth from '../pages/Auth'
-import Careers from '../pages/Careers'
-import Home from '../pages/Home'
+import { About, Auth, Careers, Home, Security } from '../pages'
 
 type LayoutProps = {
   children: JSX.Element
@@ -15,6 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
     <>
       <Header />
       {children}
+      <CtaSection />
       <Footer />
     </>
   )
@@ -32,6 +30,7 @@ const Routes = () => {
               <Route path="/" element={<Home />} />
               <Route path="/joinUs" element={<Careers />} />
               <Route path="/about" element={<About />} />
+              <Route path="/security" element={<Security />} />
             </RouterRoutes>
           </Layout>
         }
