@@ -1,4 +1,4 @@
-import { CtaSection, HeroSecurity } from '../../components/organisms'
+import { HeroSecurity, HowProtect } from '../../components/organisms'
 import { useGetSecurityQuery } from '../../services/api'
 
 const Security = () => {
@@ -13,6 +13,7 @@ const Security = () => {
   return (
     <>
       <HeroSecurity heroData={heroData} />
+      <HowProtect howProtectData={howProtectData} />
     </>
   )
 }
