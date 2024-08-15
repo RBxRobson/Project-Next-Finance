@@ -1,5 +1,4 @@
 import {
-  CtaSection,
   HeroAbout,
   MissionVision,
   PressReleases
