@@ -15,7 +15,7 @@ export const Background = styled.div`
     background-color: ${theme.colors.darkShades.d_15};
     min-width: 100vw;
     min-height: 100vh;
-    padding-top: 100px;
+    padding: 100px 0;
 
     &::before {
       content: '';
@@ -84,8 +84,13 @@ export const BackBtn = styled(motion(RouterLink))`
     color: ${theme.colors.greenShades.g_60};
 
     img {
-      width: 30px;
+      width: 50px;
       height: auto;
+
+      // Breakpoint Mobile 768px
+      ${breakpoint(theme.breakpoints.md)} {
+        width: 36px;
+      }
     }
   `}
 `
