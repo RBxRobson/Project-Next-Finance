@@ -6,13 +6,9 @@ import { useGetAuthQuery } from '../../services/api'
 const Auth = () => {
   const { data: auth } = useGetAuthQuery()
 
-  if (!auth) {
-    return <h3>Carregando...</h3>
-  }
-
   return (
     <S.Auth>
-      <AuthWrapper authContent={auth} />
+      <AuthWrapper authContent={auth!} />
     </S.Auth>
   )
 }

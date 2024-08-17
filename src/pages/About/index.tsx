@@ -8,15 +8,11 @@ import { useGetAboutQuery } from '../../services/api'
 const About = () => {
   const { data: about } = useGetAboutQuery()
 
-  if (!about) {
-    return <h3>Carregando...</h3>
-  }
-
   const {
     hero: heroData,
     mission: missionData,
     press_releases: pressReleasesData
-  } = about
+  } = about!
 
   return (
     <>

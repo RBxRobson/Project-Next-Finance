@@ -1,23 +1,46 @@
-import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from './styles/global-styles'
-import theme from './styles/themes'
 
-import { store } from './redux'
 import Routes from './routes'
+import {
+  useGetHomeQuery,
+  useGetAboutQuery,
+  useGetAuthQuery,
+  useGetCareersQuery,
+  useGetSecurityQuery
+} from './services/api'
 
 function App() {
-  return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
+  const { isLoading: isHomeLoading } = useGetHomeQuery()
+  const { isLoading: isAuthLoading } = useGetAuthQuery()
+  const { isLoading: isCareersLoading } = useGetCareersQuery()
+  const { isLoading: isAboutLoading } = useGetAboutQuery()
+  const { isLoading: isSecurityLoading } = useGetSecurityQuery()
+
+  const isLoading =
+    isHomeLoading ||
+    isAuthLoading ||
+    isCareersLoading ||
+    isAboutLoading ||
+    isSecurityLoading
+
+  if (isLoading) {
+    return (
+      <>
         <GlobalStyles />
-        <BrowserRouter>
-          <Routes />
-        </BrowserRouter>
-      </ThemeProvider>
-    </Provider>
+        <div>Carregando...</div>
+      </>
+    )
+  }
+
+  return (
+    <>
+      <GlobalStyles />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </>
   )
 }
 

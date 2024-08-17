@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
 import { register } from 'swiper/element/bundle'
-
-import App from './App'
 
 register()
 import 'swiper/css'
@@ -10,8 +10,17 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
+import themes from './styles/themes'
+
+import App from './App'
+import { store } from './redux'
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <ThemeProvider theme={themes}>
+        <App />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 )
