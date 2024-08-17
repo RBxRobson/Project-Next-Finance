@@ -18,9 +18,8 @@ const AuthWrapper = ({ authContent }: Props) => {
   return (
     <S.Background>
       <img src={radialDesignLeft} />
-      <S.BackBtn to="/">
+      <S.BackBtn to="/" title="Voltar para página inicial">
         <img src={iconLeft} alt="Ícone de flecha para esquerda" />
-        Voltar a Home
       </S.BackBtn>
       <S.Wrapper className="container">
         <S.Title>{formInfos.title}</S.Title>
