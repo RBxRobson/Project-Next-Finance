@@ -5,6 +5,8 @@ import { breakpoint } from '../../../styles/themes'
 export const Hero = styled.section`
   ${({ theme }) => css`
     position: relative;
+    display: grid;
+    grid-template-areas: 'overlap';
     border-radius: 20px;
     padding: 50px;
     z-index: 1;
@@ -17,6 +19,8 @@ export const Hero = styled.section`
     // Breakpoint Desktop 1200px
     ${breakpoint(theme.breakpoints.xl)} {
       padding: 60px;
+      display: flex;
+      flex-direction: column;
     }
 
     // Breakpoint Tablet 992px
@@ -41,7 +45,7 @@ export const RadialDesign = styled.img`
     width: 500px;
     top: 0;
     right: 0;
-    z-index: -1;
+    z-index: -2;
 
     // Breakpoint Desktop 1200px
     ${breakpoint(theme.breakpoints.xl)} {
@@ -52,11 +56,12 @@ export const RadialDesign = styled.img`
 
 export const Banner = styled.img`
   ${({ theme }) => css`
-    margin-left: calc(100% - 60%);
+    grid-area: overlap;
     width: calc(100% - 4px);
     max-width: 60%;
+    margin-left: 40%;
     border-radius: 20px;
-    z-index: 1;
+    z-index: -1;
 
     // Breakpoint Desktop 1400px
     ${breakpoint(theme.breakpoints.xxl)} {
@@ -74,12 +79,12 @@ export const Banner = styled.img`
 
 export const HeroText = styled.div`
   ${({ theme }) => css`
-    position: absolute;
-    top: 50px;
+    grid-area: overlap;
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 800px;
+    height: fit-content;
     padding: 80px;
     border-radius: 20px 0 80px 20px;
     background-color: ${theme.colors.darkShades.d_10};
@@ -92,8 +97,6 @@ export const HeroText = styled.div`
 
     // Breakpoint Desktop 1200px
     ${breakpoint(theme.breakpoints.xl)} {
-      position: relative;
-      top: auto;
       max-width: 100%;
       border-radius: 40px;
       margin-top: -200px;
