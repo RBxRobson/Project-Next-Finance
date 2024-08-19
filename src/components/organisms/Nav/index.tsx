@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
 import themes from '../../../styles/themes'
 import * as S from './styles'
@@ -13,8 +13,15 @@ type Props = {
 }
 
 const Nav = ({ type }: Props) => {
-  const [activePage, setActivePage] = useState<Page>('home')
+  const [activePage, setActivePage] = useState<Page>(() => {
+    const savedPage = localStorage.getItem('activePage') as Page
+    return savedPage || 'home'
+  })
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    localStorage.setItem('activePage', activePage)
+  }, [activePage])
 
   const handleClick = (page: Page) => {
     setActivePage(page)
