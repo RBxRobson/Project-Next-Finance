@@ -5,15 +5,20 @@ import { breakpoint } from '../../../styles/themes'
 
 export const MobileHeader = styled(motion.header)`
   ${({ theme }) => css`
-    display: flex;
+    display: none;
     margin-bottom: 50px;
 
-    // Breakpoint Desktop 768px
+    // Breakpoint Tablet 992px
+    ${breakpoint(theme.breakpoints.lg)} {
+      display: flex;
+    }
+
+    // Breakpoint Tablet 768px
     ${breakpoint(theme.breakpoints.md)} {
       margin-bottom: 36px;
     }
 
-    // Breakpoint Desktop 576px
+    // Breakpoint Mobile 576px
     ${breakpoint(theme.breakpoints.sm)} {
       margin-bottom: 24px;
     }

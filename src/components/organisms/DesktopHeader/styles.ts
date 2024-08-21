@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
+import { breakpoint } from '../../../styles/themes'
+
 export const DesktopHeader = styled(motion.header)`
   ${({ theme }) => css`
     display: flex;
@@ -13,6 +15,11 @@ export const DesktopHeader = styled(motion.header)`
 
     &.container {
       margin: 50px auto 80px;
+    }
+
+    // Breakpoint Tablet 992px
+    ${breakpoint(theme.breakpoints.lg)} {
+      display: none;
     }
   `}
 `

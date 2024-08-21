@@ -1,6 +1,5 @@
 import * as S from './styles'
 
-import Button from '../../atoms/Button'
 import AccessButtons from '../../molecules/AccessButtons'
 import Slogan from '../../molecules/Slogan'
 import Nav from '../Nav'
