@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 
 import themes from '../../../styles/themes'
 import * as S from './styles'
@@ -13,19 +14,21 @@ type Props = {
 }
 
 const Nav = ({ type }: Props) => {
-  const [activePage, setActivePage] = useState<Page>(() => {
-    const savedPage = localStorage.getItem('activePage') as Page
-    return savedPage || 'home'
-  })
+  const location = useLocation()
+  const [activePage, setActivePage] = useState<Page>('home')
   const dispatch = useDispatch()
 
   useEffect(() => {
-    localStorage.setItem('activePage', activePage)
-  }, [activePage])
+    const currentPage =
+      location.pathname === '/' ? 'home' : (location.pathname.slice(1) as Page)
+    setActivePage(currentPage)
+  }, [location])
 
-  const handleClick = (page: Page) => {
+  const handleClick = (page: Page, screen: 'mobile' | 'desktop') => {
+    if (screen === 'mobile') {
+      dispatch(setIsOpen())
+    }
     setActivePage(page)
-    dispatch(setIsOpen())
   }
 
   const setClassLink = type === 'mobile' ? 'link-mobile' : ''
@@ -40,8 +43,7 @@ const Nav = ({ type }: Props) => {
 
   const linkVariant = {
     activated: {
-      backgroundColor: themes.colors.darkShades.d_15,
-      padding: '12px 24px'
+      backgroundColor: themes.colors.darkShades.d_15
     },
     disabled: {
       backgroundColor: 'rgba(0, 0, 0, 0)'
@@ -67,13 +69,13 @@ const Nav = ({ type }: Props) => {
     <S.Nav className={setClassNav} variants={navVariant}>
       {pages.map((page) => (
         <S.Link
-          to={page.name === 'home' ? '/' : page.name}
+          to={page.name === 'home' ? '/' : `/${page.name}`}
           key={page.name}
           variants={linkVariant}
           animate={activePage === page.name ? 'activated' : 'disabled'}
           transition={{ duration: 0.2 }}
           className={setClassLink}
-          onClick={() => handleClick(page.name)}
+          onClick={() => handleClick(page.name, type)}
         >
           {page.label}
         </S.Link>

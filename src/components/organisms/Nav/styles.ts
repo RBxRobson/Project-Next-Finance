@@ -8,12 +8,6 @@ export const Nav = styled(motion.nav)`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    gap: 26px;
-
-    // Breakpoint Desktops
-    ${breakpoint(theme.breakpoints.xl)} {
-      gap: 20px;
-    }
 
     &.nav-mobile {
       flex-direction: column;
@@ -28,6 +22,7 @@ export const Link = styled(motion(RouterLink))`
     cursor: pointer;
     font-weight: ${theme.fontWeight.regular};
     border-radius: 82px;
+    padding: 12px 24px;
 
     &.link-mobile {
       width: 100%;
@@ -35,9 +30,10 @@ export const Link = styled(motion(RouterLink))`
       border-radius: 0;
     }
 
-    // Breakpoint Desktops
+    // Breakpoint Desktops 1200px
     ${breakpoint(theme.breakpoints.xl)} {
       font-size: ${theme.fontSize.xxs};
+      padding: 12px 18px;
     }
   `}
 `
