@@ -24,11 +24,8 @@ const Nav = ({ type }: Props) => {
     setActivePage(currentPage)
   }, [location])
 
-  const handleClick = (page: Page, screen: 'mobile' | 'desktop') => {
-    if (screen === 'mobile') {
-      dispatch(setIsOpen())
-    }
-    setActivePage(page)
+  const handleClick = () => {
+    dispatch(setIsOpen())
   }
 
   const setClassLink = type === 'mobile' ? 'link-mobile' : ''
@@ -75,7 +72,7 @@ const Nav = ({ type }: Props) => {
           animate={activePage === page.name ? 'activated' : 'disabled'}
           transition={{ duration: 0.2 }}
           className={setClassLink}
-          onClick={() => handleClick(page.name, type)}
+          onClick={type === 'mobile' ? handleClick : undefined}
         >
           {page.label}
         </S.Link>
