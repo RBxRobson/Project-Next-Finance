@@ -1,7 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components'
 
 import lexendFont from '../assets/fonts/Lexend-VariableFont_wght.ttf'
-import abstract_svg from '../assets/images/abstract_design_1.svg'
+import { abstractDesign } from '../assets/images'
 import { breakpoint } from './themes'
 
 const GlobalStyles = createGlobalStyle`
@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
       background-color: ${theme.colors.darkShades.d_10};
-      background-image: url(${abstract_svg});
+      background-image: url(${abstractDesign});
       background-repeat: no-repeat;
       background-size: 35%;
       background-blend-mode: hard-light;
@@ -45,10 +45,6 @@ const GlobalStyles = createGlobalStyle`
       max-width: 1600px;
       width: 90%;
       margin: 0 auto;
-    }
-
-    .hidden-overflow {
-      overflow: hidden;
     }
 
     // Estilização do root do swiper
