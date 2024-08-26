@@ -20,6 +20,17 @@ export const LoaderWrapper = styled(motion.div)`
   `}
 `
 
+export const Background = styled.div`
+  ${({ theme }) => css`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: ${theme.colors.darkShades.d_10};
+  `}
+`
+
 export const TitleLoader = styled(motion.h1)`
   ${({ theme }) => css`
     font-size: ${theme.fontSize.xxl};

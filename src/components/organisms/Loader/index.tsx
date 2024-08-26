@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion'
-
 import * as S from './styles'
 
 import { bankLogo } from '../../../assets/images'
@@ -10,7 +8,7 @@ const Loader = () => {
     transition: {
       repeat: Infinity,
       ease: 'easeInOut',
-      duration: 1,
+      duration: 0.7,
       delay: 1.5
     }
   }
@@ -45,22 +43,28 @@ const Loader = () => {
   }
 
   return (
-    <S.LoaderWrapper animate={loaderAnimate}>
-      <S.Logo
-        initial="hidden"
-        animate="visible"
-        variants={logoVariants}
-        src={bankLogo}
-        alt="Logo"
-      />
-      <S.TitleLoader
-        initial="hidden"
-        animate="visible"
-        variants={titleVariants}
+    <>
+      <S.Background />
+      <S.LoaderWrapper
+        animate={loaderAnimate}
+        aria-label="Carregando aplicação"
       >
-        Next Finance
-      </S.TitleLoader>
-    </S.LoaderWrapper>
+        <S.Logo
+          initial="hidden"
+          animate="visible"
+          variants={logoVariants}
+          src={bankLogo}
+          alt="Logo"
+        />
+        <S.TitleLoader
+          initial="hidden"
+          animate="visible"
+          variants={titleVariants}
+        >
+          Next Finance
+        </S.TitleLoader>
+      </S.LoaderWrapper>
+    </>
   )
 }
 
