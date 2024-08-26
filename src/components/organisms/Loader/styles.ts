@@ -7,6 +7,7 @@ export const LoaderWrapper = styled(motion.div)`
   ${({ theme }) => css`
     min-width: 100dvw;
     min-height: 100dvh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
