@@ -17,6 +17,11 @@ export const DesktopHeader = styled(motion.header)`
       margin: 50px auto 80px;
     }
 
+    // Breakpoint Desktop 1200px
+    ${breakpoint(theme.breakpoints.xl)} {
+      padding: 18px 22px;
+    }
+
     // Breakpoint Tablet 992px
     ${breakpoint(theme.breakpoints.lg)} {
       display: none;
