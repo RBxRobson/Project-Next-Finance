@@ -1,10 +1,16 @@
-import { HeroSecurity, HowProtect } from '../../components/organisms'
+import { HeroSecurity, HowProtect, Loader } from '../../components/organisms'
 import { useGetSecurityQuery } from '../../services/api'
 
 const Security = () => {
-  const { data: security } = useGetSecurityQuery()
+  const { data: security } = useGetSecurityQuery(undefined, {
+    selectFromResult: ({ data }) => ({ data })
+  })
 
-  const { hero: heroData, how_we_protect: howProtectData } = security!
+  if (!security) {
+    return <Loader smallLoader />
+  }
+
+  const { hero: heroData, how_we_protect: howProtectData } = security
 
   return (
     <>

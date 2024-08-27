@@ -1,6 +1,7 @@
 import {
   FAQ,
   Hero,
+  Loader,
   OurProducts,
   OurTestimonials,
   WhyChoose
@@ -8,10 +9,12 @@ import {
 import { useGetHomeQuery } from '../../services/api'
 
 const Home = () => {
-  const { data: home } = useGetHomeQuery()
+  const { data: home } = useGetHomeQuery(undefined, {
+    selectFromResult: ({ data }) => ({ data })
+  })
 
   if (!home) {
-    return <h3>Carregando...</h3>
+    return <Loader smallLoader />
   }
 
   const {
