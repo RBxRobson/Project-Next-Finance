@@ -2,7 +2,11 @@ import * as S from './styles'
 
 import { bankLogo } from '../../../assets/images'
 
-const Loader = () => {
+type Props = {
+  smallLoader?: boolean
+}
+
+const Loader = ({ smallLoader = false }: Props) => {
   const loaderAnimate = {
     opacity: [1, 0.5, 1],
     transition: {
@@ -44,8 +48,9 @@ const Loader = () => {
 
   return (
     <>
-      <S.Background />
+      {!smallLoader && <S.Background />}
       <S.LoaderWrapper
+        className={smallLoader ? 'loader-xs' : ''}
         animate={loaderAnimate}
         aria-label="Carregando aplicação"
       >

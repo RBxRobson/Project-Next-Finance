@@ -3,6 +3,17 @@ import styled, { css } from 'styled-components'
 
 import { breakpoint } from '../../../styles/themes'
 
+export const Background = styled.div`
+  ${({ theme }) => css`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: ${theme.colors.darkShades.d_10};
+  `}
+`
+
 export const LoaderWrapper = styled(motion.div)`
   ${({ theme }) => css`
     min-width: 100dvw;
@@ -17,17 +28,11 @@ export const LoaderWrapper = styled(motion.div)`
     ${breakpoint(theme.breakpoints.sm)} {
       gap: 12px;
     }
-  `}
-`
 
-export const Background = styled.div`
-  ${({ theme }) => css`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100dvw;
-    height: 100dvh;
-    background-color: ${theme.colors.darkShades.d_10};
+    &.loader-xs {
+      min-width: 100%;
+      min-height: 400px;
+    }
   `}
 `
 
