@@ -10,6 +10,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
+import GlobalStyles from './styles/global-styles'
 import themes from './styles/themes'
 
 import App from './App'
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={themes}>
+        <GlobalStyles />
         <App />
       </ThemeProvider>
     </Provider>
