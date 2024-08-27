@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
-import GlobalStyles from './styles/global-styles'
-
+import { Loader } from './components/organisms'
 import Routes from './routes'
 import {
   useGetHomeQuery,
@@ -12,6 +12,7 @@ import {
 } from './services/api'
 
 function App() {
+  const [showLoader, setShowLoader] = useState(true)
   const { isLoading: isHomeLoading } = useGetHomeQuery()
   const { isLoading: isAuthLoading } = useGetAuthQuery()
   const { isLoading: isCareersLoading } = useGetCareersQuery()
@@ -25,22 +26,28 @@ function App() {
     isAboutLoading ||
     isSecurityLoading
 
-  if (isLoading) {
-    return (
-      <>
-        <GlobalStyles />
-        <div>Carregando...</div>
-      </>
-    )
+  useEffect(() => {
+    const minLoadingTime = 2500
+
+    if (isLoading) {
+      setShowLoader(true)
+    } else {
+      const timer = setTimeout(() => {
+        setShowLoader(false)
+      }, minLoadingTime)
+
+      return () => clearTimeout(timer)
+    }
+  }, [isLoading])
+
+  if (showLoader) {
+    return <Loader />
   }
 
   return (
-    <>
-      <GlobalStyles />
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   )
 }
 
