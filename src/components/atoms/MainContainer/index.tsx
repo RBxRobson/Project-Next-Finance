@@ -1,5 +1,3 @@
-import { AnimatePresence } from 'framer-motion'
-
 import * as S from './styles'
 
 type Props = {
