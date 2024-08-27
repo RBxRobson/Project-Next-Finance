@@ -12,10 +12,6 @@ export const Hero = styled.section`
     z-index: 1;
     background-color: ${theme.colors.darkShades.d_11};
 
-    &.container {
-      margin-bottom: 150px;
-    }
-
     // Breakpoint Desktop 1200px
     ${breakpoint(theme.breakpoints.xl)} {
       padding: 60px;
@@ -26,10 +22,6 @@ export const Hero = styled.section`
     // Breakpoint Tablet 992px
     ${breakpoint(theme.breakpoints.lg)} {
       padding: 40px;
-
-      &.container {
-        margin-bottom: 80px;
-      }
     }
 
     // Breakpoint Mobile 576px
@@ -57,22 +49,33 @@ export const RadialDesign = styled.img`
 export const Banner = styled.img`
   ${({ theme }) => css`
     grid-area: overlap;
-    width: calc(100% - 4px);
+    justify-self: end;
+    width: 100%;
     max-width: 60%;
-    margin-left: 40%;
+    height: 100%;
+    min-height: 500px;
+    background: ${theme.colors.darkShades.d_11};
     border-radius: 20px;
     z-index: -1;
 
     // Breakpoint Desktop 1400px
     ${breakpoint(theme.breakpoints.xxl)} {
-      margin-left: calc(100% - 715px);
       max-width: 715px;
     }
 
     // Breakpoint Desktop 1200px
     ${breakpoint(theme.breakpoints.xl)} {
       max-width: 100%;
-      margin-left: 2px;
+    }
+
+    // Breakpoint Tablet 768px
+    ${breakpoint(theme.breakpoints.md)} {
+      min-height: 300px;
+    }
+
+    // Breakpoint Mobile 576px
+    ${breakpoint(theme.breakpoints.sm)} {
+      min-height: 200px;
     }
   `}
 `
@@ -119,7 +122,7 @@ export const HeroText = styled.div`
     h2 {
       font-size: ${theme.fontSize.xxl};
       font-weight: ${theme.fontWeight.medium};
-      margin-bottom: 23px;
+      margin-bottom: 24px;
 
       span {
         color: ${theme.colors.greenShades.g_60};

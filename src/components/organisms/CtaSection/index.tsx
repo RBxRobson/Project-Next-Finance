@@ -10,7 +10,7 @@ const CtaSection = () => {
   const dispatch = useDispatch()
 
   return (
-    <S.CtaContent className="container">
+    <S.CtaContent>
       <img src={radialDesignRight} />
       <div>
         <h2>

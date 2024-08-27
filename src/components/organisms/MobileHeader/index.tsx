@@ -14,13 +14,13 @@ const MobileHeader = () => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add('hidden-overflow')
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.classList.remove('hidden-overflow')
+      document.body.style.overflow = 'auto'
     }
 
     return () => {
-      document.body.classList.remove('hidden-overflow')
+      document.body.style.overflow = 'auto'
     }
   }, [isOpen])
 

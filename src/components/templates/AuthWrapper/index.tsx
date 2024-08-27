@@ -21,7 +21,7 @@ const AuthWrapper = ({ authContent }: Props) => {
       <S.BackBtn to="/" title="Voltar para página inicial">
         <img src={iconLeft} alt="Ícone de flecha para esquerda" />
       </S.BackBtn>
-      <S.Wrapper className="container">
+      <S.Wrapper>
         <S.Title>{formInfos.title}</S.Title>
         <S.Description>{formInfos.description}</S.Description>
         <AuthForm authContent={authContent} />

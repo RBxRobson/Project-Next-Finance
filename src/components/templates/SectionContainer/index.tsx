@@ -17,7 +17,7 @@ const SectionContainer = ({
   tabSelector
 }: Props) => {
   return (
-    <S.Section className="container">
+    <S.Section>
       <h2>
         {titleSection.title}
         <span>{titleSection.markText}</span>

@@ -4,10 +4,6 @@ import { breakpoint } from '../../../styles/themes'
 
 export const Section = styled.section`
   ${({ theme }) => css`
-    &.container {
-      margin-bottom: 150px;
-    }
-
     h2 {
       margin-bottom: 14px;
       font-size: ${theme.fontSize.xxl};
@@ -37,10 +33,6 @@ export const Section = styled.section`
     // Breakpoint Tablet 992px
     ${breakpoint(theme.breakpoints.lg)} {
       text-align: center;
-
-      &.container {
-        margin-bottom: 80px;
-      }
 
       & > p {
         margin-bottom: 40px;

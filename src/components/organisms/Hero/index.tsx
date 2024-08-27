@@ -14,7 +14,7 @@ const Hero = ({ heroData }: Props) => {
   const dispatch = useDispatch()
 
   return (
-    <S.HeroContent className="container">
+    <S.HeroContent>
       <S.HeroTitleWrapper>
         <S.Tag>
           <img src={verifyIcon} alt="Ícone de verificado" />

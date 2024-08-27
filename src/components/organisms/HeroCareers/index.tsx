@@ -8,7 +8,7 @@ type Props = {
 
 const HeroCareers = ({ heroData }: Props) => {
   return (
-    <S.Hero className="container">
+    <S.Hero>
       <S.Banner src={heroData.img} />
       <S.HeroText>
         <h2>
