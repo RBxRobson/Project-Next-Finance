@@ -28,8 +28,8 @@ const MissionVision = ({ missionVisionData }: Props) => {
       <>
         <S.ArticleContainer>
           <S.Banner>
-            <S.BackgroundBanner src={backgroundBanner} />
-            <S.BannerImg src={missionImg} />
+            <S.BackgroundBanner src={backgroundBanner} alt="" aria-hidden />
+            <S.BannerImg src={missionImg} alt="" aria-hidden />
           </S.Banner>
           <S.TextArticle>
             <h3>{missionTitle}</h3>
@@ -42,8 +42,8 @@ const MissionVision = ({ missionVisionData }: Props) => {
             <p>{visionDescription}</p>
           </S.TextArticle>
           <S.Banner>
-            <S.BackgroundBanner src={backgroundBanner} />
-            <S.BannerImg src={visionImg} />
+            <S.BackgroundBanner src={backgroundBanner} alt="" aria-hidden />
+            <S.BannerImg src={visionImg} alt="" aria-hidden />
           </S.Banner>
         </S.ArticleContainer>
       </>

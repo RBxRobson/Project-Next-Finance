@@ -71,7 +71,7 @@ const Footer = () => {
             </li>
             <li>
               <a href="#">
-                <img src={twitterIcon} alt="Ícone do X, antigo twitter" />
+                <img src={twitterIcon} alt="Ícone do X/Twitter" />
               </a>
             </li>
             <li>

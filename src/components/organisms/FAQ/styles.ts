@@ -41,7 +41,7 @@ export const CardHeader = styled.header`
     align-items: center;
     cursor: pointer;
 
-    h4 {
+    h3 {
       font-size: ${theme.fontSize.md};
       font-weight: ${theme.fontWeight.regular};
     }
@@ -51,7 +51,7 @@ export const CardHeader = styled.header`
       gap: 100px;
       text-align: start;
 
-      h4 {
+      h3 {
         font-size: ${theme.fontSize.sm};
       }
     }
@@ -60,7 +60,7 @@ export const CardHeader = styled.header`
     ${breakpoint(theme.breakpoints.sm)} {
       gap: 8px;
 
-      h4 {
+      h3 {
         font-size: ${theme.fontSize.xs};
       }
     }

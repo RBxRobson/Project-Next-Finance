@@ -26,17 +26,16 @@ const WhyChoose = ({ whyChooseData }: Props) => {
     >
       <>
         <S.WhyChooseArticle className="column-reverse">
-          <S.Cards>
-            <img src={radialDesignRight} className="position_left" />
+          <S.Cards className="position-left">
             {forPeopleCards.map((card) => (
               <S.Card key={card.id}>
-                <img src={card.icon} alt="Ícone da estrutura de uma casa" />
+                <img src={card.icon} alt="" aria-hidden />
                 <p>{card.name}</p>
               </S.Card>
             ))}
           </S.Cards>
           <S.DescriptionContainer>
-            <h4>Pessoa Física</h4>
+            <h3>Pessoa Física</h3>
             <p>{forPeopleDescription}</p>
             <S.StaticsWrapper>
               {forPeopleStatistics.map((statistic) => (
@@ -50,7 +49,7 @@ const WhyChoose = ({ whyChooseData }: Props) => {
         </S.WhyChooseArticle>
         <S.WhyChooseArticle style={{ marginTop: 80 }}>
           <S.DescriptionContainer>
-            <h4>Empresas</h4>
+            <h3>Empresas</h3>
             <p>{forBusinessesDescription}</p>
             <S.StaticsWrapper>
               {forBusinessesStatistics.map((statistic) => (
@@ -61,11 +60,10 @@ const WhyChoose = ({ whyChooseData }: Props) => {
               ))}
             </S.StaticsWrapper>
           </S.DescriptionContainer>
-          <S.Cards>
-            <img src={radialDesignLeft} className="position_right" />
+          <S.Cards className="position-right">
             {forBusinessesCards.map((card) => (
               <S.Card key={card.id}>
-                <img src={card.icon} />
+                <img src={card.icon} alt="" aria-hidden />
                 <p>{card.name}</p>
               </S.Card>
             ))}

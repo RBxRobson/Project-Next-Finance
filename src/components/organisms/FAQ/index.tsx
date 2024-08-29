@@ -37,7 +37,7 @@ const FAQ = ({ faqData }: Props) => {
                 animate={isOpen ? 'closed' : 'open'}
               >
                 <S.CardHeader>
-                  <h4>{card.title}</h4>
+                  <h3>{card.title}</h3>
                   <S.IconX
                     viewBox="0 0 24 24"
                     transition={{

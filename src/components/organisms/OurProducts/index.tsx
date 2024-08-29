@@ -45,8 +45,8 @@ const OurProducts = ({ ourProductsData }: Props) => {
         >
           {products.map((product) => (
             <S.ListItem key={product.id}>
-              <img src={product.icon} />
-              <h4>{product.title}</h4>
+              <img src={product.icon} alt="" aria-hidden />
+              <h3>{product.title}</h3>
               <p>{product.description}</p>
             </S.ListItem>
           ))}

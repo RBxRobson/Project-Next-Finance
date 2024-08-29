@@ -17,7 +17,7 @@ const OurBenefits = ({ benefitsData }: Props) => {
           <S.CardContainer key={card.id}>
             <S.Card>
               <S.CardTitle>
-                <img src={card.icon} />
+                <img src={card.icon} alt="" aria-hidden />
                 <h3>{card.title}</h3>
               </S.CardTitle>
               <p>{card.description}</p>

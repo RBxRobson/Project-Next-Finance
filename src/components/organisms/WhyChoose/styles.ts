@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components'
 
 import { breakpoint } from '../../../styles/themes'
 
+import { radialDesignLeft, radialDesignRight } from '../../../assets/images'
+
 export const WhyChooseArticle = styled.article`
   ${({ theme }) => css`
     display: grid;
@@ -24,27 +26,22 @@ export const WhyChooseArticle = styled.article`
 
 export const Cards = styled.ul`
   ${({ theme }) => css`
-    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 50px;
     background-color: ${theme.colors.darkShades.d_11};
     border-radius: 20px;
+    background-repeat: no-repeat;
 
-    & > img {
-      position: absolute;
-      z-index: 1;
+    &.position-left {
+      background-image: url(${radialDesignRight});
+      background-position: 0 0;
+    }
 
-      &.position_left {
-        left: 0;
-        top: 0;
-      }
-
-      &.position_right {
-        right: 0;
-        top: 0;
-      }
+    &.position-right {
+      background-image: url(${radialDesignLeft});
+      background-position: 100% 0;
     }
 
     // Breakpoint Desktop 576px
@@ -86,7 +83,7 @@ export const Card = styled.li`
 
 export const DescriptionContainer = styled.div`
   ${({ theme }) => css`
-    h4 {
+    h3 {
       font-size: ${theme.fontSize.lg};
       margin-bottom: 14px;
     }

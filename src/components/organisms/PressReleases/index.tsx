@@ -14,7 +14,7 @@ const PressReleases = ({ pressReleasesData }: Props) => {
       <S.NotesList>
         {pressReleasesData.notes.map((note) => (
           <S.Note key={note.id}>
-            <img src={note.img} />
+            <img src={note.img} alt="Imagem da notícia" />
             <h3>{note.title}</h3>
             <S.TagsContainer>
               {note.tags.map((tag) => (

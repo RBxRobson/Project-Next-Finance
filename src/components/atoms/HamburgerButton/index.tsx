@@ -64,6 +64,8 @@ const HamburgerButton = () => {
       whileTap={{ scale: 1.1 }}
       whileHover={{ filter: 'brightness(0.9)' }}
       onClick={onClickButton}
+      type="button"
+      aria-label={`${isOpen ? 'Fechar' : 'Abrir'} menu de navegação`}
     >
       <S.Svg viewBox={`0 0 ${boxSize} 10`} preserveAspectRatio="none">
         <motion.line x2="100%" y1="2" y2="2" variants={top} {...lineProps} />

@@ -17,7 +17,7 @@ const Hero = ({ heroData }: Props) => {
     <S.HeroContent>
       <S.HeroTitleWrapper>
         <S.Tag>
-          <img src={verifyIcon} alt="Ícone de verificado" />
+          <img src={verifyIcon} alt="" aria-hidden />
           <span>Sem verificação de crédito</span>
         </S.Tag>
         <h2>
@@ -32,7 +32,7 @@ const Hero = ({ heroData }: Props) => {
           onClick={() => dispatch(setAuthType('register'))}
         />
       </S.HeroTitleWrapper>
-      <S.AbstractDesign src={abstractDesignHero} />
+      <S.AbstractDesign src={abstractDesignHero} alt="" aria-hidden />
     </S.HeroContent>
   )
 }

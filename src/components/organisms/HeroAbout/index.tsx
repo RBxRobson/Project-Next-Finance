@@ -9,7 +9,7 @@ type Props = {
 const HeroAbout = ({ heroData }: Props) => {
   return (
     <S.Hero>
-      <S.Banner src={heroData.img} />
+      <S.Banner src={heroData.img} alt="" aria-hidden />
       <S.HeroText>
         <h4>{heroData.subTitle}</h4>
         <h2>
@@ -17,7 +17,7 @@ const HeroAbout = ({ heroData }: Props) => {
         </h2>
         <p>{heroData.description}</p>
       </S.HeroText>
-      <S.RadialDesign src={radialDesignLeft} />
+      <S.RadialDesign src={radialDesignLeft} alt="" aria-hidden />
     </S.Hero>
   )
 }

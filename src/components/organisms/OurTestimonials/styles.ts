@@ -129,8 +129,13 @@ export const Testimony = styled(motion.div)`
     min-height: 330px;
     gap: 50px;
 
-    h4 {
+    h3 {
       margin-top: auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
     }
 
     // Breakpoint Mobile 576px

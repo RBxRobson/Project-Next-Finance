@@ -11,7 +11,7 @@ const CtaSection = () => {
 
   return (
     <S.CtaContent>
-      <img src={radialDesignRight} />
+      <img src={radialDesignRight} alt="" aria-hidden />
       <div>
         <h2>
           Comece sua jornada financeira com

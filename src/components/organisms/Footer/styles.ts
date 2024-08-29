@@ -77,6 +77,11 @@ export const InfosContact = styled.ul`
       p {
         color: ${theme.colors.whiteShades.w_90};
       }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
     }
   `}
 `

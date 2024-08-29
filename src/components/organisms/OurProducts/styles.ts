@@ -60,7 +60,7 @@ export const ListItem = styled.li`
       height: 78px;
     }
 
-    h4 {
+    h3 {
       font-size: ${theme.fontSize.lg};
       margin: 30px 0 20px;
       font-weight: ${theme.fontWeight.regular};

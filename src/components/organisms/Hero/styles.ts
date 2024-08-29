@@ -19,6 +19,11 @@ export const Tag = styled.div`
     border-radius: 60px;
     font-weight: ${theme.fontWeight.light};
     background-color: ${theme.colors.darkShades.d_15};
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
   `}
 `
 

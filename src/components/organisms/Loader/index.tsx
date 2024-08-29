@@ -59,7 +59,7 @@ const Loader = ({ smallLoader = false }: Props) => {
           animate="visible"
           variants={logoVariants}
           src={bankLogo}
-          alt="Logo"
+          alt="Logo Next Finance"
         />
         <S.TitleLoader
           initial="hidden"

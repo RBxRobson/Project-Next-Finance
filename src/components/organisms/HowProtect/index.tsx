@@ -20,7 +20,7 @@ const HowProtect = ({ howProtectData }: Props) => {
         {howProtectData.cards.map((card) => (
           <S.Card key={card.id}>
             <CardTitle>
-              <img src={card.icon} />
+              <img src={card.icon} alt="" aria-hidden />
               <h3>{card.title}</h3>
             </CardTitle>
             <p>{card.description}</p>

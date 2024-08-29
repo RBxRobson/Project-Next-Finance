@@ -90,9 +90,9 @@ const OurTestimonials = ({ ourTestimonialsData }: Props) => {
                     duration: 0.8
                   }}
                 >
-                  <img src={testimonyHeader} />
+                  <img src={testimonyHeader} alt="Imagem de aspas dupla" />
                   <p>{testimony.testimony}</p>
-                  <h4>{testimony.name}</h4>
+                  <h3>{testimony.name}</h3>
                 </S.Testimony>
               </AnimatePresence>
             </SwiperSlide>
