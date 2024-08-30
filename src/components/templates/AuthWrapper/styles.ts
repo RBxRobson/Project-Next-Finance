@@ -41,6 +41,7 @@ export const Background = styled.div`
       top: 0;
       right: 0;
       width: 250px;
+      opacity: 0.8;
 
       // Breakpoint Mobile 576px
       ${breakpoint(theme.breakpoints.sm)} {
@@ -84,7 +85,7 @@ export const BackBtn = styled(motion(RouterLink))`
     color: ${theme.colors.greenShades.g_60};
 
     img {
-      width: 50px;
+      width: 40px;
       height: auto;
 
       // Breakpoint Mobile 768px

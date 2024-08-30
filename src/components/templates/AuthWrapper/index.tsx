@@ -17,7 +17,7 @@ const AuthWrapper = ({ authContent }: Props) => {
 
   return (
     <S.Background>
-      <img src={radialDesignLeft} />
+      <img src={radialDesignLeft} alt="" aria-hidden />
       <S.BackBtn to="/" title="Voltar para página inicial">
         <img src={iconLeft} alt="Ícone de seta para esquerda" />
       </S.BackBtn>
