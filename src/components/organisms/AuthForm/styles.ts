@@ -13,12 +13,18 @@ export const InputsWrapper = styled.div<{ $authType: string }>`
   ${({ $authType, theme }) => css`
     display: grid;
     grid-template-columns: ${$authType === 'register' ? '1fr 1fr' : '1fr'};
-    gap: 30px;
+    gap: 30px 80px;
     margin-bottom: 50px;
     width: 100%;
+    max-width: 1000px;
 
-    // Breakpoint Mobile 576px
-    ${breakpoint(theme.breakpoints.sm)} {
+    // Breakpoint Tablet 992px
+    ${breakpoint(theme.breakpoints.lg)} {
+      gap: 30px 50px;
+    }
+
+    // Breakpoint Tablet 768px
+    ${breakpoint(theme.breakpoints.md)} {
       grid-template-columns: 1fr;
     }
   `}
@@ -28,7 +34,21 @@ export const InputController = styled.div`
   position: relative;
   width: 100%;
   max-width: 450px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
+
+  small {
+    width: fit-content;
+    color: red;
+    text-align: start;
+    margin: 0 14px;
+  }
+`
+
+export const InputBox = styled.div`
+  position: relative;
+  width: 100%;
 `
 
 export const BtnShowPassword = styled(motion.button)`
@@ -69,6 +89,9 @@ export const Input = styled.input`
 
 export const ButtonsWrapper = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const FormConfirmBtn = styled(BtnGreen)`
