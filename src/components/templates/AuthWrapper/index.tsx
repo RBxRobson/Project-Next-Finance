@@ -21,7 +21,7 @@ const AuthWrapper = ({ authContent }: Props) => {
       <S.BackBtn to="/" title="Voltar para página inicial">
         <img src={iconLeft} alt="Ícone de seta para esquerda" />
       </S.BackBtn>
-      <S.Wrapper>
+      <S.Wrapper className="container">
         <S.Title>{formInfos.title}</S.Title>
         <S.Description>{formInfos.description}</S.Description>
         <AuthForm authContent={authContent} />
